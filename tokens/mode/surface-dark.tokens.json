@@ -1,0 +1,91 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "component": {
+    "base": {
+      "background": {
+        "$type": "color",
+        "$value": "{role.color.bg.inverse}"
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.inverse}"
+      },
+      "card": {
+        "$type": "color",
+        "$value": "{role.color.bg.inverse-raised}"
+      },
+      "card-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.inverse}"
+      },
+      "popover": {
+        "$type": "color",
+        "$value": "{role.color.bg.inverse-raised}"
+      },
+      "popover-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.inverse}"
+      },
+      "primary": {
+        "$type": "color",
+        "$value": "{role.color.action.inverse}"
+      },
+      "primary-foreground": {
+        "$type": "color",
+        "$value": "{role.color.action.inverse-text}"
+      },
+      "primary-hover": {
+        "$type": "color",
+        "$value": "{role.color.action.inverse-hover}"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{role.color.bg.inverse-raised}"
+      },
+      "secondary-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.inverse}"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{role.color.bg.inverse-raised}"
+      },
+      "muted-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.inverse-dim}"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{role.color.brand.light}"
+      },
+      "accent-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.inverse}"
+      },
+      "destructive": {
+        "$type": "color",
+        "$value": "{role.color.status.error.bg}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{role.color.border.inverse}"
+      },
+      "input": {
+        "$type": "color",
+        "$value": "{role.color.text.inverse-dim}"
+      },
+      "ring": {
+        "$type": "color",
+        "$value": "{role.color.focus.inverse}"
+      },
+      "heading": {
+        "$type": "color",
+        "$value": "{role.color.text.inverse}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{role.color.text.inverse}"
+      }
+    }
+  }
+}

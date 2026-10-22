@@ -1,0 +1,8 @@
+{
+  "id": "demo",
+  "name": "Démonstration",
+  "description": "Marque de démonstration, volontairement éloignée du thème neutre : teintes chaudes, magenta et lime, grands rayons, police à empattement, six paliers de données. Elle sert aux tests et aux captures, jamais à un produit.",
+  "tokens": "tokens.json",
+  "fonts": "fonts.json",
+  "dataScale": { "steps": 6 }
+}

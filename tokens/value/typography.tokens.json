@@ -1,0 +1,243 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "value": {
+    "font": {
+      "family": {
+        "$type": "fontFamily",
+        "heading": {
+          "$value": [
+            "Inter Variable",
+            "system-ui",
+            "-apple-system",
+            "Segoe UI",
+            "Roboto",
+            "Helvetica Neue",
+            "Arial",
+            "sans-serif"
+          ],
+          "$description": "Titres."
+        },
+        "text": {
+          "$value": [
+            "Inter Variable",
+            "system-ui",
+            "-apple-system",
+            "Segoe UI",
+            "Roboto",
+            "Helvetica Neue",
+            "Arial",
+            "sans-serif"
+          ],
+          "$description": "Texte courant, chiffres compris."
+        },
+        "figure": {
+          "$value": [
+            "Inter Variable",
+            "system-ui",
+            "-apple-system",
+            "Segoe UI",
+            "Roboto",
+            "Helvetica Neue",
+            "Arial",
+            "sans-serif"
+          ],
+          "$description": "Chiffres clés et tableaux : mêmes chiffres de largeur fixe (tabulaires), pas de police à chasse fixe."
+        },
+        "code": {
+          "$value": [
+            "ui-monospace",
+            "ui-monospace",
+            "SFMono-Regular",
+            "Menlo",
+            "Consolas",
+            "monospace"
+          ],
+          "$description": "Code uniquement, jamais pour des chiffres."
+        }
+      },
+      "size": {
+        "$type": "dimension",
+        "2xs": {
+          "$value": {
+            "value": 0.625,
+            "unit": "rem"
+          },
+          "$description": "Libellé en capitales."
+        },
+        "xs": {
+          "$value": {
+            "value": 0.6875,
+            "unit": "rem"
+          },
+          "$description": "Surtitre en capitales."
+        },
+        "caption": {
+          "$value": {
+            "value": 0.75,
+            "unit": "rem"
+          },
+          "$description": "Légende, étiquette dense, infobulle."
+        },
+        "sm": {
+          "$value": {
+            "value": 0.8125,
+            "unit": "rem"
+          },
+          "$description": "Petit texte, texte de bouton."
+        },
+        "base": {
+          "$value": {
+            "value": 1,
+            "unit": "rem"
+          },
+          "$description": "Texte courant."
+        },
+        "lg": {
+          "$value": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "$description": "Chapô, titre de bloc."
+        },
+        "xl": {
+          "$value": {
+            "value": 1.625,
+            "unit": "rem"
+          },
+          "$description": "Sous-titre."
+        },
+        "2xl": {
+          "$value": {
+            "value": 2.25,
+            "unit": "rem"
+          },
+          "$description": "Titre."
+        },
+        "display": {
+          "$value": {
+            "value": 4.5,
+            "unit": "rem"
+          },
+          "$description": "Grand titre : taille maximale. Fluide entre 2,5 rem (téléphone) et cette taille (clamp).",
+          "$extensions": {
+            "org.le-socle": {
+              "fluid": {
+                "min": {
+                  "value": 2.5,
+                  "unit": "rem"
+                },
+                "preferred": "1rem + 5vw"
+              }
+            }
+          }
+        }
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "light": {
+          "$value": 300,
+          "$description": "Grands titres."
+        },
+        "regular": {
+          "$value": 400
+        },
+        "medium": {
+          "$value": 500
+        },
+        "semibold": {
+          "$value": 600
+        }
+      },
+      "leading": {
+        "$type": "number",
+        "none": {
+          "$value": 1,
+          "$description": "Chiffres clés."
+        },
+        "tight": {
+          "$value": 1.05,
+          "$description": "Grand titre."
+        },
+        "snug": {
+          "$value": 1.15,
+          "$description": "Titre."
+        },
+        "heading": {
+          "$value": 1.3,
+          "$description": "Sous-titre, libellé."
+        },
+        "normal": {
+          "$value": 1.5,
+          "$description": "Chapô, capitales."
+        },
+        "relaxed": {
+          "$value": 1.6,
+          "$description": "Texte courant."
+        }
+      },
+      "tracking": {
+        "$type": "number",
+        "tight": {
+          "$value": -0.03,
+          "$description": "Grand titre.",
+          "$extensions": {
+            "org.le-socle": {
+              "unit": "em"
+            }
+          }
+        },
+        "snug": {
+          "$value": -0.02,
+          "$description": "Titre.",
+          "$extensions": {
+            "org.le-socle": {
+              "unit": "em"
+            }
+          }
+        },
+        "heading": {
+          "$value": -0.01,
+          "$description": "Sous-titre.",
+          "$extensions": {
+            "org.le-socle": {
+              "unit": "em"
+            }
+          }
+        },
+        "normal": {
+          "$value": 0,
+          "$extensions": {
+            "org.le-socle": {
+              "unit": "em"
+            }
+          }
+        },
+        "caps": {
+          "$value": 0.16,
+          "$description": "Libellés en capitales.",
+          "$extensions": {
+            "org.le-socle": {
+              "unit": "em"
+            }
+          }
+        },
+        "caps-wide": {
+          "$value": 0.2,
+          "$description": "Surtitres en capitales.",
+          "$extensions": {
+            "org.le-socle": {
+              "unit": "em"
+            }
+          }
+        }
+      },
+      "numeric": {
+        "$type": "string",
+        "tabular": {
+          "$value": "tabular-nums",
+          "$description": "Chiffres de même largeur : tableaux, scores, indicateurs."
+        }
+      }
+    }
+  }
+}

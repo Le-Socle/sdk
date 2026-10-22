@@ -1,0 +1,44 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "role": {
+    "control": {
+      "sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 36,
+          "unit": "px"
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 44,
+          "unit": "px"
+        }
+      }
+    },
+    "row": {
+      "single": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        }
+      },
+      "double": {
+        "$type": "dimension",
+        "$value": {
+          "value": 52,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

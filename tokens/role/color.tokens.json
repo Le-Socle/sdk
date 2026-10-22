@@ -1,0 +1,329 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "role": {
+    "color": {
+      "bg": {
+        "page": {
+          "$value": "{value.palette.neutral.50}",
+          "$description": "Fond de page, environ 60 % de la surface."
+        },
+        "surface": {
+          "$value": "{value.palette.white}",
+          "$description": "Cartes, panneaux, champs : la surface posée sur le fond."
+        },
+        "raised": {
+          "$value": "{value.palette.neutral.100}",
+          "$description": "Remplissage neutre : pistes, barres, ligne survolée. Sans texte secondaire dessus."
+        },
+        "inverse": {
+          "$value": "{value.palette.neutral.900}",
+          "$description": "Sections sombres, barre latérale."
+        },
+        "inverse-deep": {
+          "$value": "{value.palette.neutral.950}",
+          "$description": "Le fond le plus sombre : couverture, pied de page."
+        },
+        "inverse-raised": {
+          "$value": "{value.palette.neutral.800}",
+          "$description": "Surface surélevée posée sur un fond sombre."
+        }
+      },
+      "text": {
+        "primary": {
+          "$value": "{value.palette.neutral.700}",
+          "$description": "Texte courant."
+        },
+        "heading": {
+          "$value": "{value.palette.neutral.900}",
+          "$description": "Titres, texte en gras et chiffres clés."
+        },
+        "secondary": {
+          "$value": "{value.palette.neutral.600}",
+          "$description": "Légendes, aide, en-têtes de tableau. Sur le fond et la surface seulement."
+        },
+        "tertiary": {
+          "$value": "{value.palette.neutral.550}",
+          "$description": "Numéros de page, sources. Même restriction que le texte secondaire."
+        },
+        "inverse": {
+          "$value": "{value.palette.white}",
+          "$description": "Texte sur fond sombre."
+        },
+        "inverse-dim": {
+          "$value": "{value.palette.neutral.300}",
+          "$description": "Texte secondaire sur fond sombre."
+        },
+        "link": {
+          "$value": "{value.palette.primary.600}",
+          "$description": "Lien sur fond clair."
+        }
+      },
+      "brand": {
+        "base": {
+          "$value": "{value.palette.primary.800}",
+          "$description": "Couleur principale de la marque : titres, chiffres clés, états sélectionnés."
+        },
+        "dark": {
+          "$value": "{value.palette.primary.950}",
+          "$description": "Variante plus sombre de la couleur principale."
+        },
+        "light": {
+          "$value": "{value.palette.primary.700}",
+          "$description": "Survol et surfaces surélevées de la couleur principale."
+        },
+        "mid": {
+          "$value": "{value.palette.primary.600}",
+          "$description": "Liens, icônes et éléments interactifs."
+        },
+        "subtle": {
+          "$value": "{value.palette.primary.100}",
+          "$description": "Fond d'un état sélectionné."
+        }
+      },
+      "action": {
+        "base": {
+          "$value": "{value.palette.primary.600}",
+          "$description": "Bouton principal sur fond clair."
+        },
+        "hover": {
+          "$value": "{value.palette.primary.700}",
+          "$description": "Survol et appui du bouton principal."
+        },
+        "text": {
+          "$value": "{value.palette.white}",
+          "$description": "Texte du bouton principal."
+        },
+        "inverse": {
+          "$value": "{value.palette.white}",
+          "$description": "Bouton principal sur fond sombre."
+        },
+        "inverse-hover": {
+          "$value": "{value.palette.neutral.100}",
+          "$description": "Survol et appui du bouton principal sur fond sombre."
+        },
+        "inverse-text": {
+          "$value": "{value.palette.primary.900}",
+          "$description": "Texte du bouton principal sur fond sombre."
+        }
+      },
+      "accent": {
+        "base": {
+          "$value": "{value.palette.accent.600}",
+          "$description": "Accent de la marque, en touches. Jamais sur un bouton."
+        },
+        "subtle": {
+          "$value": "{value.palette.accent.100}",
+          "$description": "Fond d'accent pâle."
+        },
+        "ink": {
+          "$value": "{value.palette.accent.700}",
+          "$description": "Texte sur le fond d'accent pâle."
+        },
+        "secondary": {
+          "$value": "{value.palette.secondary.700}",
+          "$description": "Second accent, discret : surtitres, filets."
+        }
+      },
+      "border": {
+        "base": {
+          "$value": "{value.palette.neutral.200}",
+          "$description": "Filet courant."
+        },
+        "subtle": {
+          "$value": "{value.palette.neutral.150}",
+          "$description": "Filet léger : séparateur dans un tableau ou une carte."
+        },
+        "strong": {
+          "$value": "{value.palette.neutral.400}",
+          "$description": "Bordure d'un champ ou d'une case : 3:1 au moins sur le fond et la surface."
+        },
+        "inverse": {
+          "$value": "{value.palette.neutral.700}",
+          "$description": "Filet sur fond sombre."
+        }
+      },
+      "focus": {
+        "base": {
+          "$value": "{value.palette.primary.600}",
+          "$description": "Anneau de focus sur fond clair."
+        },
+        "inverse": {
+          "$value": "{value.palette.white}",
+          "$description": "Anneau de focus sur fond sombre."
+        }
+      },
+      "overlay": {
+        "$value": "{value.palette.ink.60}",
+        "$description": "Voile derrière une fenêtre modale."
+      },
+      "scrim": {
+        "$value": "{value.palette.ink.6}",
+        "$description": "Voile léger : survol d'une zone, image sous du texte."
+      },
+      "field": {
+        "strong": {
+          "$value": "{value.palette.primary.900}",
+          "$description": "Aplat d'un bloc de profil : la couleur principale, foncée."
+        },
+        "strong-line": {
+          "$value": "{value.palette.primary.800}",
+          "$description": "Trait du quadrillage sur l'aplat foncé."
+        },
+        "accent": {
+          "$value": "{value.palette.accent.700}",
+          "$description": "Aplat : l'accent, une grande surface seulement."
+        },
+        "accent-line": {
+          "$value": "{value.palette.accent.600}",
+          "$description": "Trait du quadrillage sur l'aplat d'accent."
+        },
+        "soft": {
+          "$value": "{value.palette.primary.200}",
+          "$description": "Aplat : la couleur principale claire."
+        },
+        "soft-line": {
+          "$value": "{value.palette.primary.100}",
+          "$description": "Trait du quadrillage sur l'aplat clair."
+        },
+        "accent-soft": {
+          "$value": "{value.palette.accent.100}",
+          "$description": "Aplat : l'accent pâle."
+        },
+        "accent-soft-line": {
+          "$value": "{value.palette.white}",
+          "$description": "Trait du quadrillage sur l'aplat d'accent pâle."
+        }
+      },
+      "sidebar": {
+        "bg": {
+          "$value": "{role.color.bg.inverse}",
+          "$description": "Fond de la barre latérale."
+        },
+        "text": {
+          "$value": "{role.color.text.inverse}",
+          "$description": "Texte et icône d'une entrée survolée ou courante, titre d'un groupe."
+        },
+        "text-dim": {
+          "$value": "{role.color.text.inverse-dim}",
+          "$description": "Texte et icône d'une entrée au repos."
+        },
+        "hover": {
+          "$value": "{role.color.brand.light}",
+          "$description": "Fond d'une entrée survolée."
+        },
+        "active": {
+          "$value": "{value.palette.primary.700}",
+          "$description": "Fond de l'entrée de la page courante."
+        },
+        "divider": {
+          "$value": "{role.color.brand.light}",
+          "$description": "Filet qui sépare deux groupes d'entrées."
+        },
+        "focus": {
+          "$value": "{role.color.focus.inverse}",
+          "$description": "Anneau de focus dans la barre latérale."
+        }
+      },
+      "series": {
+        "1": {
+          "$value": "{value.palette.primary.600}",
+          "$description": "Série 1 d'un graphique."
+        },
+        "2": {
+          "$value": "{value.palette.accent.600}",
+          "$description": "Série 2."
+        },
+        "3": {
+          "$value": "{value.palette.secondary.600}",
+          "$description": "Série 3."
+        },
+        "4": {
+          "$value": "{value.palette.neutral.550}",
+          "$description": "Série 4."
+        },
+        "5": {
+          "$value": "{value.palette.orange.500}",
+          "$description": "Série 5."
+        },
+        "6": {
+          "$value": "{value.palette.green.500}",
+          "$description": "Série 6."
+        }
+      },
+      "status": {
+        "success": {
+          "$root": {
+            "$value": "{value.palette.green.500}",
+            "$description": "Succès : repère."
+          },
+          "text": {
+            "$value": "{value.palette.green.700}",
+            "$description": "Succès : texte."
+          },
+          "bg": {
+            "$value": "{value.palette.green.100}",
+            "$description": "Succès : fond."
+          },
+          "border": {
+            "$value": "{value.palette.green.300}",
+            "$description": "Succès : bordure."
+          }
+        },
+        "warning": {
+          "$root": {
+            "$value": "{value.palette.amber.500}",
+            "$description": "Avertissement : repère."
+          },
+          "text": {
+            "$value": "{value.palette.amber.700}",
+            "$description": "Avertissement : texte."
+          },
+          "bg": {
+            "$value": "{value.palette.amber.100}",
+            "$description": "Avertissement : fond."
+          },
+          "border": {
+            "$value": "{value.palette.amber.300}",
+            "$description": "Avertissement : bordure."
+          }
+        },
+        "error": {
+          "$root": {
+            "$value": "{value.palette.red.500}",
+            "$description": "Erreur : repère."
+          },
+          "text": {
+            "$value": "{value.palette.red.700}",
+            "$description": "Erreur : texte."
+          },
+          "bg": {
+            "$value": "{value.palette.red.100}",
+            "$description": "Erreur : fond."
+          },
+          "border": {
+            "$value": "{value.palette.red.300}",
+            "$description": "Erreur : bordure."
+          }
+        },
+        "info": {
+          "$root": {
+            "$value": "{value.palette.primary.500}",
+            "$description": "Information : repère."
+          },
+          "text": {
+            "$value": "{value.palette.primary.700}",
+            "$description": "Information : texte."
+          },
+          "bg": {
+            "$value": "{value.palette.primary.100}",
+            "$description": "Information : fond."
+          },
+          "border": {
+            "$value": "{value.palette.primary.300}",
+            "$description": "Information : bordure."
+          }
+        }
+      }
+    }
+  }
+}

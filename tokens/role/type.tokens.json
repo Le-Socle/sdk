@@ -1,0 +1,332 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "role": {
+    "type": {
+      "display": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.light}",
+          "$description": "Grand titre."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.display}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.tight}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.heading}"
+        },
+        "tracking": {
+          "$type": "number",
+          "$value": "{value.font.tracking.tight}"
+        }
+      },
+      "title": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.light}",
+          "$description": "Titre."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.2xl}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.snug}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.heading}"
+        },
+        "tracking": {
+          "$type": "number",
+          "$value": "{value.font.tracking.snug}"
+        }
+      },
+      "subtitle": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.regular}",
+          "$description": "Sous-titre."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.xl}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.heading}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.heading}"
+        },
+        "tracking": {
+          "$type": "number",
+          "$value": "{value.font.tracking.heading}"
+        }
+      },
+      "heading": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.regular}",
+          "$description": "Titre de bloc ou de carte."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.lg}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.heading}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.heading}"
+        }
+      },
+      "lede": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.regular}",
+          "$description": "Chapô sous un titre."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.lg}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.normal}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.text}"
+        }
+      },
+      "body": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.regular}",
+          "$description": "Texte courant."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.base}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.relaxed}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.text}"
+        }
+      },
+      "body-sm": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.regular}",
+          "$description": "Petit texte courant."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.sm}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.relaxed}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.text}"
+        }
+      },
+      "label": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.medium}",
+          "$description": "Étiquette de champ, texte de bouton."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.sm}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.heading}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.text}"
+        }
+      },
+      "label-lg": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.medium}",
+          "$description": "Étiquette de 16 px : pastille, valeur ou bouton dans une illustration."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.base}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.heading}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.text}"
+        }
+      },
+      "caption": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.regular}",
+          "$description": "Légende, aide, méta d'un tableau, infobulle."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.caption}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.heading}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.text}"
+        }
+      },
+      "label-sm": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.medium}",
+          "$description": "Étiquette dense d'une application : badge."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.caption}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.heading}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.text}"
+        }
+      },
+      "overline": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.semibold}",
+          "$description": "Surtitre en capitales."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.xs}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.normal}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.text}"
+        },
+        "tracking": {
+          "$type": "number",
+          "$value": "{value.font.tracking.caps-wide}"
+        },
+        "caps": {
+          "$type": "number",
+          "$value": 1,
+          "$description": "Capitales."
+        }
+      },
+      "label-caps": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.semibold}",
+          "$description": "Libellé en capitales."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.2xs}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.normal}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.text}"
+        },
+        "tracking": {
+          "$type": "number",
+          "$value": "{value.font.tracking.caps}"
+        },
+        "caps": {
+          "$type": "number",
+          "$value": 1,
+          "$description": "Capitales."
+        }
+      },
+      "figure": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.regular}",
+          "$description": "Chiffre clé, chiffres tabulaires."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.2xl}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.none}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.figure}"
+        },
+        "tabular": {
+          "$type": "number",
+          "$value": 1,
+          "$description": "Chiffres tabulaires."
+        }
+      },
+      "figure-sm": {
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{value.font.weight.medium}",
+          "$description": "Chiffre de tableau ou de pastille, chiffres tabulaires."
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{value.font.size.lg}"
+        },
+        "leading": {
+          "$type": "number",
+          "$value": "{value.font.leading.none}"
+        },
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{value.font.family.figure}"
+        },
+        "tabular": {
+          "$type": "number",
+          "$value": 1,
+          "$description": "Chiffres tabulaires."
+        }
+      }
+    }
+  }
+}

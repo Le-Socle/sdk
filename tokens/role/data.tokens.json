@@ -1,0 +1,165 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "role": {
+    "data": {
+      "count": {
+        "$type": "number",
+        "$value": 4,
+        "$description": "Nombre de paliers de l'échelle de données, fixé par la marque (4 ou 6). Palier 1 = le plus favorable."
+      },
+      "threshold": {
+        "1": {
+          "$type": "number",
+          "$value": 25,
+          "$description": "Borne entre le palier 1 et le palier 2, sur une échelle de 0 à 100."
+        },
+        "2": {
+          "$type": "number",
+          "$value": 50,
+          "$description": "Borne entre le palier 2 et le palier 3, sur une échelle de 0 à 100."
+        },
+        "3": {
+          "$type": "number",
+          "$value": 75,
+          "$description": "Borne entre le palier 3 et le palier 4, sur une échelle de 0 à 100."
+        }
+      }
+    },
+    "color": {
+      "data": {
+        "1": {
+          "mark": {
+            "$type": "color",
+            "$value": "{value.palette.tier.1.500}",
+            "$description": "Palier 1 : repère graphique."
+          },
+          "text": {
+            "$type": "color",
+            "$value": "{value.palette.tier.1.700}",
+            "$description": "Palier 1 : texte."
+          },
+          "bg": {
+            "$type": "color",
+            "$value": "{value.palette.tier.1.100}",
+            "$description": "Palier 1 : fond de pastille."
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{value.palette.tier.1.300}",
+            "$description": "Palier 1 : bordure de pastille."
+          }
+        },
+        "2": {
+          "mark": {
+            "$type": "color",
+            "$value": "{value.palette.tier.2.500}",
+            "$description": "Palier 2 : repère graphique."
+          },
+          "text": {
+            "$type": "color",
+            "$value": "{value.palette.tier.2.700}",
+            "$description": "Palier 2 : texte."
+          },
+          "bg": {
+            "$type": "color",
+            "$value": "{value.palette.tier.2.100}",
+            "$description": "Palier 2 : fond de pastille."
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{value.palette.tier.2.300}",
+            "$description": "Palier 2 : bordure de pastille."
+          }
+        },
+        "3": {
+          "mark": {
+            "$type": "color",
+            "$value": "{value.palette.tier.3.500}",
+            "$description": "Palier 3 : repère graphique."
+          },
+          "text": {
+            "$type": "color",
+            "$value": "{value.palette.tier.3.700}",
+            "$description": "Palier 3 : texte."
+          },
+          "bg": {
+            "$type": "color",
+            "$value": "{value.palette.tier.3.100}",
+            "$description": "Palier 3 : fond de pastille."
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{value.palette.tier.3.300}",
+            "$description": "Palier 3 : bordure de pastille."
+          }
+        },
+        "4": {
+          "mark": {
+            "$type": "color",
+            "$value": "{value.palette.tier.4.500}",
+            "$description": "Palier 4 : repère graphique."
+          },
+          "text": {
+            "$type": "color",
+            "$value": "{value.palette.tier.4.700}",
+            "$description": "Palier 4 : texte."
+          },
+          "bg": {
+            "$type": "color",
+            "$value": "{value.palette.tier.4.100}",
+            "$description": "Palier 4 : fond de pastille."
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{value.palette.tier.4.300}",
+            "$description": "Palier 4 : bordure de pastille."
+          }
+        },
+        "5": {
+          "mark": {
+            "$type": "color",
+            "$value": "{value.palette.tier.5.500}",
+            "$description": "Palier 5 : repère graphique."
+          },
+          "text": {
+            "$type": "color",
+            "$value": "{value.palette.tier.5.700}",
+            "$description": "Palier 5 : texte."
+          },
+          "bg": {
+            "$type": "color",
+            "$value": "{value.palette.tier.5.100}",
+            "$description": "Palier 5 : fond de pastille."
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{value.palette.tier.5.300}",
+            "$description": "Palier 5 : bordure de pastille."
+          }
+        },
+        "6": {
+          "mark": {
+            "$type": "color",
+            "$value": "{value.palette.tier.6.500}",
+            "$description": "Palier 6 : repère graphique."
+          },
+          "text": {
+            "$type": "color",
+            "$value": "{value.palette.tier.6.700}",
+            "$description": "Palier 6 : texte."
+          },
+          "bg": {
+            "$type": "color",
+            "$value": "{value.palette.tier.6.100}",
+            "$description": "Palier 6 : fond de pastille."
+          },
+          "border": {
+            "$type": "color",
+            "$value": "{value.palette.tier.6.300}",
+            "$description": "Palier 6 : bordure de pastille."
+          }
+        }
+      }
+    }
+  }
+}

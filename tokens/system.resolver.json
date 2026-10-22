@@ -1,0 +1,68 @@
+{
+  "name": "Jetons du SDK du Socle",
+  "version": "2025.10",
+  "description": "Valeurs, rôles, composants ; puis la marque, le mode (clair ou sombre), la surface (claire, sombre, la plus sombre) et la densité. Une marque ajoute un contexte au modificateur « brand ».",
+  "sets": {
+    "value": {
+      "sources": [
+        { "$ref": "value/color.tokens.json" },
+        { "$ref": "value/typography.tokens.json" },
+        { "$ref": "value/space-motion.tokens.json" }
+      ]
+    },
+    "role": {
+      "sources": [
+        { "$ref": "role/color.tokens.json" },
+        { "$ref": "role/data.tokens.json" },
+        { "$ref": "role/type.tokens.json" },
+        { "$ref": "role/structure.tokens.json" }
+      ]
+    },
+    "component": {
+      "sources": [{ "$ref": "component/components.tokens.json" }]
+    }
+  },
+  "modifiers": {
+    "brand": {
+      "description": "La marque remplace des valeurs et des rôles. « neutral » : le thème neutre du SDK.",
+      "default": "neutral",
+      "contexts": {
+        "neutral": [],
+        "demo": [{ "$ref": "../brands/demo/tokens.json" }]
+      }
+    },
+    "mode": {
+      "description": "Thème clair par défaut ; sombre complet activable.",
+      "default": "light",
+      "contexts": {
+        "light": [],
+        "dark": [{ "$ref": "mode/dark.tokens.json" }]
+      }
+    },
+    "surface": {
+      "description": "Section sombre posée dans une page claire (attribut data-surface).",
+      "default": "light",
+      "contexts": {
+        "light": [],
+        "dark": [{ "$ref": "mode/surface-dark.tokens.json" }],
+        "darker": [{ "$ref": "mode/surface-darker.tokens.json" }]
+      }
+    },
+    "density": {
+      "default": "compact",
+      "contexts": {
+        "compact": [],
+        "comfortable": [{ "$ref": "mode/density-comfortable.tokens.json" }]
+      }
+    }
+  },
+  "resolutionOrder": [
+    { "$ref": "#/sets/value" },
+    { "$ref": "#/sets/role" },
+    { "$ref": "#/sets/component" },
+    { "$ref": "#/modifiers/brand" },
+    { "$ref": "#/modifiers/mode" },
+    { "$ref": "#/modifiers/surface" },
+    { "$ref": "#/modifiers/density" }
+  ]
+}

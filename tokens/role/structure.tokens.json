@@ -1,0 +1,398 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "role": {
+    "radius": {
+      "sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Petit rayon."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "Rayon des composants."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "Grand rayon."
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$description": "Très grand rayon."
+      },
+      "detail": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Pastille de niveau, badge, étiquette flottante, infobulle."
+      },
+      "mark": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "Barre, case, repère de légende."
+      },
+      "dot": {
+        "$type": "dimension",
+        "$value": {
+          "value": 9999,
+          "unit": "px"
+        },
+        "$description": "Point, bouton radio, pastille ronde."
+      }
+    },
+    "border-width": {
+      "thin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        },
+        "$description": "Filet courant."
+      },
+      "thick": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "Filet d'appui."
+      }
+    },
+    "focus-ring": {
+      "width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "Épaisseur de l'anneau de focus."
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "Écart entre l'élément et l'anneau."
+      }
+    },
+    "space": {
+      "slide-margin": {
+        "$type": "dimension",
+        "$value": "{value.space.19}",
+        "$description": "Marge d'une slide."
+      }
+    },
+    "container": {
+      "page": {
+        "$type": "dimension",
+        "$value": {
+          "value": 78,
+          "unit": "rem"
+        },
+        "$description": "Largeur maximale du contenu d'une page."
+      },
+      "prose": {
+        "$type": "number",
+        "$value": 65,
+        "$description": "Mesure de lecture : 65 caractères par ligne.",
+        "$extensions": {
+          "org.le-socle": {
+            "unit": "ch"
+          }
+        }
+      }
+    },
+    "layer": {
+      "sticky": {
+        "$type": "number",
+        "$value": 10,
+        "$description": "Élément qui reste visible pendant le défilement."
+      },
+      "sheet": {
+        "$type": "number",
+        "$value": 20,
+        "$description": "Volet latéral."
+      },
+      "dialog": {
+        "$type": "number",
+        "$value": 30,
+        "$description": "Dialogue modal et son voile."
+      },
+      "menu": {
+        "$type": "number",
+        "$value": 40,
+        "$description": "Menu, liste déroulante, fenêtre contextuelle."
+      },
+      "toast": {
+        "$type": "number",
+        "$value": 50,
+        "$description": "Notification brève."
+      },
+      "tooltip": {
+        "$type": "number",
+        "$value": 60,
+        "$description": "Infobulle : au-dessus de tout."
+      }
+    },
+    "breakpoint": {
+      "sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "rem"
+        },
+        "$description": "Point de rupture 640 px."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "rem"
+        },
+        "$description": "Point de rupture 768 px."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 64,
+          "unit": "rem"
+        },
+        "$description": "Point de rupture 1024 px."
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 80,
+          "unit": "rem"
+        },
+        "$description": "Point de rupture 1280 px."
+      }
+    },
+    "control": {
+      "touch": {
+        "$type": "dimension",
+        "$value": {
+          "value": 44,
+          "unit": "px"
+        },
+        "$description": "Cible tactile : la hauteur de tout contrôle sous un pointeur grossier."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$description": "Contrôle compact.",
+        "$extensions": {
+          "org.le-socle": {
+            "coarse": "{role.control.touch}"
+          }
+        }
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        },
+        "$description": "Contrôle courant.",
+        "$extensions": {
+          "org.le-socle": {
+            "coarse": "{role.control.touch}"
+          }
+        }
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        },
+        "$description": "Contrôle d'une action principale.",
+        "$extensions": {
+          "org.le-socle": {
+            "coarse": "{role.control.touch}"
+          }
+        }
+      }
+    },
+    "row": {
+      "single": {
+        "$type": "dimension",
+        "$value": {
+          "value": 36,
+          "unit": "px"
+        },
+        "$description": "Ligne de tableau à un seul texte.",
+        "$extensions": {
+          "org.le-socle": {
+            "coarse": "{role.control.touch}"
+          }
+        }
+      },
+      "double": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        },
+        "$description": "Ligne de tableau à deux textes empilés."
+      }
+    },
+    "shadow": {
+      "1": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": "{value.palette.ink.8}",
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 1,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 2,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": "{value.palette.ink.6}",
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 1,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 1,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "$description": "Barre d'en-tête qui défile."
+      },
+      "2": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": "{value.palette.ink.10}",
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 12,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": "{value.palette.ink.6}",
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 1,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 3,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "$description": "Menu, infobulle, liste déroulante."
+      },
+      "3": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": "{value.palette.ink.14}",
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 16,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 40,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": "{value.palette.ink.6}",
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 8,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "$description": "Fenêtre modale."
+      }
+    }
+  }
+}

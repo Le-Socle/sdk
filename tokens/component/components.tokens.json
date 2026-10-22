@@ -1,0 +1,465 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "component": {
+    "base": {
+      "background": {
+        "$type": "color",
+        "$value": "{role.color.bg.page}",
+        "$description": "Fond de page, ou de la section sombre.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "background"
+          }
+        }
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.primary}",
+        "$description": "Texte courant.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "foreground"
+          }
+        }
+      },
+      "card": {
+        "$type": "color",
+        "$value": "{role.color.bg.surface}",
+        "$description": "Surface posée sur le fond : carte, panneau, champ.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "card"
+          }
+        }
+      },
+      "card-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.primary}",
+        "$description": "Texte sur une surface.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "card-foreground"
+          }
+        }
+      },
+      "popover": {
+        "$type": "color",
+        "$value": "{role.color.bg.surface}",
+        "$description": "Menu, infobulle, liste déroulante.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "popover"
+          }
+        }
+      },
+      "popover-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.primary}",
+        "$description": "Texte d'un menu ou d'une infobulle.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "popover-foreground"
+          }
+        }
+      },
+      "primary": {
+        "$type": "color",
+        "$value": "{role.color.action.base}",
+        "$description": "Bouton principal.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "primary"
+          }
+        }
+      },
+      "primary-foreground": {
+        "$type": "color",
+        "$value": "{role.color.action.text}",
+        "$description": "Texte du bouton principal.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "primary-foreground"
+          }
+        }
+      },
+      "primary-hover": {
+        "$type": "color",
+        "$value": "{role.color.action.hover}",
+        "$description": "Survol et appui du bouton principal.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "primary-hover"
+          }
+        }
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{role.color.bg.raised}",
+        "$description": "Remplissage neutre.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "secondary"
+          }
+        }
+      },
+      "secondary-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.heading}",
+        "$description": "Texte sur le remplissage neutre.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "secondary-foreground"
+          }
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{role.color.bg.raised}",
+        "$description": "Piste, barre, ligne survolée. Sans texte atténué dessus.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "muted"
+          }
+        }
+      },
+      "muted-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.secondary}",
+        "$description": "Texte atténué : légende, aide.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "muted-foreground"
+          }
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{role.color.brand.subtle}",
+        "$description": "Survol et élément sélectionné.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "accent"
+          }
+        }
+      },
+      "accent-foreground": {
+        "$type": "color",
+        "$value": "{role.color.text.heading}",
+        "$description": "Texte sur le survol ou l'élément sélectionné.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "accent-foreground"
+          }
+        }
+      },
+      "destructive": {
+        "$type": "color",
+        "$value": "{role.color.status.error}",
+        "$description": "Danger et erreur.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "destructive"
+          }
+        }
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{role.color.border.base}",
+        "$description": "Filet courant.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "border"
+          }
+        }
+      },
+      "input": {
+        "$type": "color",
+        "$value": "{role.color.border.strong}",
+        "$description": "Bordure d'un champ ou d'une case.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "input"
+          }
+        }
+      },
+      "ring": {
+        "$type": "color",
+        "$value": "{role.color.focus.base}",
+        "$description": "Anneau de focus.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "ring"
+          }
+        }
+      },
+      "heading": {
+        "$type": "color",
+        "$value": "{role.color.text.heading}",
+        "$description": "Titres, libellés et chiffres clés.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "heading"
+          }
+        }
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{role.color.text.link}",
+        "$description": "Lien.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "link"
+          }
+        }
+      },
+      "chart-1": {
+        "$type": "color",
+        "$value": "{role.color.series.1}",
+        "$description": "Série 1 d'un graphique.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "chart-1"
+          }
+        }
+      },
+      "chart-2": {
+        "$type": "color",
+        "$value": "{role.color.series.2}",
+        "$description": "Série 2.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "chart-2"
+          }
+        }
+      },
+      "chart-3": {
+        "$type": "color",
+        "$value": "{role.color.series.3}",
+        "$description": "Série 3.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "chart-3"
+          }
+        }
+      },
+      "chart-4": {
+        "$type": "color",
+        "$value": "{role.color.series.4}",
+        "$description": "Série 4.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "chart-4"
+          }
+        }
+      },
+      "chart-5": {
+        "$type": "color",
+        "$value": "{role.color.series.5}",
+        "$description": "Série 5.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "chart-5"
+          }
+        }
+      },
+      "sidebar": {
+        "$type": "color",
+        "$value": "{role.color.sidebar.bg}",
+        "$description": "Fond de la barre latérale.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "sidebar"
+          }
+        }
+      },
+      "sidebar-foreground": {
+        "$type": "color",
+        "$value": "{role.color.sidebar.text-dim}",
+        "$description": "Texte et icône d'une entrée au repos.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "sidebar-foreground"
+          }
+        }
+      },
+      "sidebar-primary": {
+        "$type": "color",
+        "$value": "{role.color.sidebar.active}",
+        "$description": "Fond de l'entrée de la page courante.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "sidebar-primary"
+          }
+        }
+      },
+      "sidebar-primary-foreground": {
+        "$type": "color",
+        "$value": "{role.color.sidebar.text}",
+        "$description": "Texte de l'entrée de la page courante.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "sidebar-primary-foreground"
+          }
+        }
+      },
+      "sidebar-accent": {
+        "$type": "color",
+        "$value": "{role.color.sidebar.hover}",
+        "$description": "Fond d'une entrée survolée.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "sidebar-accent"
+          }
+        }
+      },
+      "sidebar-accent-foreground": {
+        "$type": "color",
+        "$value": "{role.color.sidebar.text}",
+        "$description": "Texte d'une entrée survolée.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "sidebar-accent-foreground"
+          }
+        }
+      },
+      "sidebar-border": {
+        "$type": "color",
+        "$value": "{role.color.sidebar.divider}",
+        "$description": "Filet entre deux groupes d'entrées.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "sidebar-border"
+          }
+        }
+      },
+      "sidebar-ring": {
+        "$type": "color",
+        "$value": "{role.color.sidebar.focus}",
+        "$description": "Anneau de focus dans la barre latérale.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "sidebar-ring"
+          }
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "{role.radius.md}",
+        "$description": "Rayon des composants.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "radius"
+          }
+        }
+      }
+    },
+    "button": {
+      "primary-bg": {
+        "$type": "color",
+        "$value": "{component.base.primary}",
+        "$description": "Fond du bouton principal."
+      },
+      "primary-fg": {
+        "$type": "color",
+        "$value": "{component.base.primary-foreground}",
+        "$description": "Texte du bouton principal."
+      },
+      "primary-hover-bg": {
+        "$type": "color",
+        "$value": "{component.base.primary-hover}",
+        "$description": "Survol du bouton principal."
+      },
+      "secondary-bg": {
+        "$type": "color",
+        "$value": "{component.base.secondary}",
+        "$description": "Fond du bouton secondaire."
+      },
+      "secondary-fg": {
+        "$type": "color",
+        "$value": "{component.base.secondary-foreground}",
+        "$description": "Texte du bouton secondaire."
+      },
+      "ghost-fg": {
+        "$type": "color",
+        "$value": "{component.base.foreground}",
+        "$description": "Texte du bouton discret."
+      },
+      "ghost-hover-bg": {
+        "$type": "color",
+        "$value": "{component.base.accent}",
+        "$description": "Survol du bouton discret."
+      },
+      "destructive-bg": {
+        "$type": "color",
+        "$value": "{component.base.destructive}",
+        "$description": "Fond du bouton destructif."
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{component.base.ring}",
+        "$description": "Anneau de focus du bouton."
+      }
+    },
+    "input": {
+      "bg": {
+        "$type": "color",
+        "$value": "{component.base.card}",
+        "$description": "Fond d'un champ."
+      },
+      "fg": {
+        "$type": "color",
+        "$value": "{component.base.foreground}",
+        "$description": "Texte saisi."
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{component.base.input}",
+        "$description": "Bordure d'un champ."
+      },
+      "placeholder": {
+        "$type": "color",
+        "$value": "{component.base.muted-foreground}",
+        "$description": "Texte d'aide dans un champ vide."
+      },
+      "focus-ring": {
+        "$type": "color",
+        "$value": "{component.base.ring}",
+        "$description": "Anneau de focus du champ."
+      }
+    },
+    "card": {
+      "bg": {
+        "$type": "color",
+        "$value": "{component.base.card}",
+        "$description": "Fond d'une carte."
+      },
+      "fg": {
+        "$type": "color",
+        "$value": "{component.base.card-foreground}",
+        "$description": "Texte d'une carte."
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{component.base.border}",
+        "$description": "Bordure d'une carte."
+      },
+      "title": {
+        "$type": "color",
+        "$value": "{component.base.heading}",
+        "$description": "Titre d'une carte."
+      }
+    },
+    "badge": {
+      "bg": {
+        "$type": "color",
+        "$value": "{component.base.secondary}",
+        "$description": "Fond d'un badge neutre."
+      },
+      "fg": {
+        "$type": "color",
+        "$value": "{component.base.secondary-foreground}",
+        "$description": "Texte d'un badge neutre."
+      }
+    }
+  }
+}
