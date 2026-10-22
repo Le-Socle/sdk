@@ -158,7 +158,7 @@ export function RecordDrawerHost({ className }: { className?: string }) {
   return (
     <Sheet open={!!current} onOpenChange={(o) => !o && drawer.close()}>
       {current ? (
-        <SheetContent size={drawer.full ? 'wide' : 'wide'} aria-label={m.drawer.label} showCloseButton={false} className={cn('p-0', drawer.full && 'sm:data-[size=wide]:w-full', className)} data-mode={drawer.mode}>
+        <SheetContent size="wide" aria-label={m.drawer.label} showCloseButton={false} className={cn('p-0', drawer.full && 'sm:data-[size=wide]:w-full', className)} data-mode={drawer.mode}>
           <DrawerBody key={`${current.object}.${current.id}`} entry={current} />
         </SheetContent>
       ) : null}
