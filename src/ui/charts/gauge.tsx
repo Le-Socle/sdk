@@ -7,6 +7,7 @@ import { fillMessage, useMessages } from "../messages"
 import { formatNumber } from "./format"
 import { tierOf, tierVar, type DataScale } from "./scale"
 import { useDataScale } from "./use-data-scale"
+import { useTierLabels } from "./use-tier-labels"
 
 /**
  * Jauge : un demi-cercle découpé en autant de segments que l'échelle de la marque a de paliers
@@ -48,9 +49,10 @@ type GaugeProps = Omit<React.ComponentProps<"div">, "children"> & {
   size?: "md" | "lg"
 }
 
-function Gauge({ label, value, max = 100, higherIsBetter = false, scale: scaleProp, tierLabels, display, size = "md", className, ...props }: GaugeProps) {
+function Gauge({ label, value, max = 100, higherIsBetter = false, scale: scaleProp, tierLabels: tierLabelsProp, display, size = "md", className, ...props }: GaugeProps) {
   const scale = useDataScale(scaleProp)
   const messages = useMessages()
+  const tierLabels = useTierLabels(scale.count, tierLabelsProp)
   const pct = value === null ? null : Math.min(Math.max((value / max) * 100, 0), 100)
   const tier = pct === null ? null : tierOf(pct, scale, higherIsBetter)
   const bounds = [0, ...scale.thresholds.slice(0, scale.count - 1), 100]

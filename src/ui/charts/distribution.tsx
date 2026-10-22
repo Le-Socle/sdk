@@ -8,6 +8,7 @@ import { ChartKey } from "./chart"
 import { formatNumber, formatPercent } from "./format"
 import { tierVar, type DataScale } from "./scale"
 import { useDataScale } from "./use-data-scale"
+import { useTierLabels } from "./use-tier-labels"
 
 /**
  * Distribution : comment un ensemble se répartit entre les paliers de l'échelle de données. Une
@@ -24,9 +25,10 @@ type DistributionProps = Omit<React.ComponentProps<"div">, "children"> & {
   size?: "md" | "lg"
 }
 
-function Distribution({ counts, tierLabels, scale: scaleProp, size = "md", className, ...props }: DistributionProps) {
+function Distribution({ counts, tierLabels: tierLabelsProp, scale: scaleProp, size = "md", className, ...props }: DistributionProps) {
   const scale = useDataScale(scaleProp)
   const messages = useMessages()
+  const tierLabels = useTierLabels(scale.count, tierLabelsProp)
   const values = Array.from({ length: scale.count }, (_, i) => counts[i] ?? 0)
   const total = values.reduce((a, b) => a + b, 0)
   const label = (i: number) => tierLabels?.[i] ?? fillMessage(messages.tierShort, { n: i + 1 })

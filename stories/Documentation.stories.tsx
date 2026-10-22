@@ -17,6 +17,7 @@ export const CreerUneMarque: StoryObj = {
           head={['Fichier', 'Rôle']}
           rows={[
             [<code key="a">brand.json</code>, 'Identité : id, nom, fichiers de jetons et de polices, nombre de paliers de données.'],
+            [<code key="b0">tierLabels</code>, <>Champ facultatif de <code>brand.json</code> : libellés des paliers par langue, du plus favorable au dernier (<code>{'{ "fr": ["Excellent", …] }'}</code>). Lus par la jauge, l’arc et la répartition ; <code>MessagesProvider</code> (<code>tierLabels</code>) ou la propriété du composant les remplace.</>],
             [<code key="b">tokens.json</code>, 'Jetons DTCG 2025.10 : remplace des valeurs (palette, familles) et des rôles. Rien d’autre n’est à écrire.'],
             [<code key="c">fonts.json</code>, 'Familles (titres, texte, chiffres, code), fichiers woff2, licence, repli par support.'],
             [<code key="d">fonts/</code>, 'Les fichiers woff2 et la licence de chaque famille. Aucune URL distante.'],

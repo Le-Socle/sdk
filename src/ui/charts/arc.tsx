@@ -7,6 +7,7 @@ import { fillMessage, useMessages } from "../messages"
 import { formatNumber } from "./format"
 import { tierOf, tierVar, type DataScale } from "./scale"
 import { useDataScale } from "./use-data-scale"
+import { useTierLabels } from "./use-tier-labels"
 
 /**
  * Arc : un anneau qui se remplit d'une valeur, avec la valeur au centre. Couleur du palier (échelle
@@ -53,12 +54,13 @@ type ArcProps = Omit<React.ComponentProps<"div">, "children"> & {
 function Arc({ label, value, max = 100, tiered = false, higherIsBetter = false, scale: scaleProp, reference, target, display, size = "md", className, ...props }: ArcProps) {
   const scale = useDataScale(scaleProp)
   const messages = useMessages()
+  const tierLabels = useTierLabels(scale.count)
   const ratio = value === null ? 0 : Math.min(Math.max(value / max, 0), 1)
   const tier = value === null || !tiered ? null : tierOf(ratio * 100, scale, higherIsBetter)
   const end = ratio * 360
   const fill = end > 0 ? arcPath(0, Math.min(end, 360 - CAP)) : null
   const shown = display ?? (value === null ? "–" : formatNumber(value, messages.locale))
-  const spoken = value === null ? `${label} : ${messages.notRated}` : `${label} : ${formatNumber(value, messages.locale)} / ${formatNumber(max, messages.locale)}${tier ? `, ${fillMessage(messages.tier, { n: tier, count: scale.count })}` : ""}`
+  const spoken = value === null ? `${label} : ${messages.notRated}` : `${label} : ${formatNumber(value, messages.locale)} / ${formatNumber(max, messages.locale)}${tier ? `, ${tierLabels?.[tier - 1] ?? fillMessage(messages.tier, { n: tier, count: scale.count })}` : ""}`
   const fmtN = (v: number) => formatNumber(v, messages.locale)
   const extras = [reference !== undefined ? `${messages.chartReference} ${fmtN(reference)}` : null, target !== undefined ? `${messages.chartTarget} ${fmtN(target)}` : null].filter(Boolean)
   const spokenAll = extras.length ? `${spoken}, ${extras.join(", ")}` : spoken

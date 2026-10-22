@@ -9,7 +9,7 @@
 // Tout part de tokens/ et de brands/. Rien n'est écrit ailleurs que dans `genDir`.
 import fs from 'node:fs';
 import path from 'node:path';
-import { emitCss, emitDtcg, emitIndex, emitTheme, emitTs, loadSystem, tokenSummary } from './tokens-core.mjs';
+import { emitCss, emitDtcg, emitIndex, emitTheme, emitTierLabelsCss, emitTs, loadSystem, readTierLabels, tokenSummary } from './tokens-core.mjs';
 import { emitFontsCss, readFonts } from './fonts.mjs';
 
 function write(file, content) {
@@ -58,13 +58,14 @@ export async function buildAll(o) {
   // --- chaque marque
   for (const b of brands) {
     const fonts = readFonts({ manifestFile: path.join(b.dir, 'fonts.json'), baseDir: path.join(b.dir, 'fonts') });
-    out(`brands/${b.id}/brand.css`, `@import "./fonts.css";\n\n${emitCss({ resolver, brand: b.id })}`);
+    const tierLabels = readTierLabels(b.manifest, `${b.dir}/brand.json`);
+    out(`brands/${b.id}/brand.css`, `@import "./fonts.css";\n\n${emitCss({ resolver, brand: b.id })}${emitTierLabelsCss(tierLabels)}`);
     out(`brands/${b.id}/fonts.css`, emitFontsCss(fonts, { urlPrefix: './fonts/' }));
     for (const f of fonts.files) {
       fs.mkdirSync(path.join(o.genDir, 'brands', b.id, 'fonts', path.dirname(f.rel)), { recursive: true });
       fs.copyFileSync(f.abs, path.join(o.genDir, 'brands', b.id, 'fonts', f.rel));
     }
-    out(`ts/${b.id}.ts`, emitTs({ resolver, brand: b.id, fonts: fonts.exported, typesImport }).source);
+    out(`ts/${b.id}.ts`, emitTs({ resolver, brand: b.id, fonts: fonts.exported, tierLabels, typesImport }).source);
     for (const [name, input] of modes) out(`dtcg/${b.id}.${name}.json`, JSON.stringify(emitDtcg(resolver.apply({ brand: b.id, ...input })), null, 2) + '\n');
     log(`marque ${b.id} : ${Object.keys(resolver.apply({ brand: b.id })).length} jetons`);
   }

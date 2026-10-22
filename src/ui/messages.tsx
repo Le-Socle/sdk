@@ -50,6 +50,8 @@ export type Messages = {
   tier: string;
   /** Palier de l'échelle, affiché : gabarit avec `{n}` (« Palier 2 »). */
   tierShort: string;
+  /** Libellés des paliers, du 1 (le plus favorable) au dernier. Vide : ceux de la marque (`brand.json`), sinon « Palier N ». */
+  tierLabels: string[];
   noData: string;
   notRated: string;
   chartTable: string;
@@ -87,6 +89,7 @@ export const messagesFr: Messages = {
   locale: 'fr-FR',
   tier: 'Palier {n} sur {count}',
   tierShort: 'Palier {n}',
+  tierLabels: [],
   noData: 'Aucune donnée.',
   notRated: 'Non évalué',
   chartTable: 'Données du graphique',

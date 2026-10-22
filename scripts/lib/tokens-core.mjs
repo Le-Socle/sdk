@@ -479,13 +479,36 @@ export function colorToHex(v) {
   return `rgba(${r}, ${g}, ${b}, ${num(a)})`;
 }
 
+/** Libellés de paliers de `brand.json` : `"tierLabels": { "fr": ["Excellent", …], "en": [ … ] }`, une liste par langue,
+ * du palier 1 (le plus favorable) au dernier. Contrôlés (listes de textes, longueur = `dataScale.steps` si donné). */
+export function readTierLabels(manifest, where = 'brand.json') {
+  const labels = manifest.tierLabels;
+  if (labels === undefined) return null;
+  if (!labels || typeof labels !== 'object' || Array.isArray(labels)) throw new Error(`${where} : « tierLabels » doit être un objet { langue: [libellés] }.`);
+  const steps = manifest.dataScale?.steps;
+  for (const [lang, list] of Object.entries(labels)) {
+    if (!/^[a-z]{2,3}$/.test(lang)) throw new Error(`${where} : tierLabels « ${lang} » n'est pas un code de langue (deux ou trois lettres minuscules, par exemple « fr »).`);
+    if (!Array.isArray(list) || list.some((x) => typeof x !== 'string' || !x.trim())) throw new Error(`${where} : tierLabels.${lang} doit être une liste de textes non vides.`);
+    if (steps !== undefined && list.length !== steps) throw new Error(`${where} : tierLabels.${lang} a ${list.length} libellés pour ${steps} paliers.`);
+  }
+  return labels;
+}
+
+/** Variables CSS `--tier-label-<langue>-<n>` lues par les composants qui affichent un palier. */
+export function emitTierLabelsCss(labels) {
+  if (!labels) return '';
+  const lines = [];
+  for (const [lang, list] of Object.entries(labels)) list.forEach((text, i) => lines.push(`  --tier-label-${lang}-${i + 1}: ${JSON.stringify(text)};`));
+  return `\n/* Libellés des paliers de la marque, par langue (brand.json › tierLabels). MessagesProvider les remplace. */\n:root {\n${lines.join('\n')}\n}\n`;
+}
+
 export function rawMap(tokens) {
   const out = {};
   for (const [id, t] of Object.entries(tokens)) out[id] = toRaw(t);
   return out;
 }
 
-export function emitTs({ resolver, brand, fonts, typesImport = '../types' }) {
+export function emitTs({ resolver, brand, fonts, tierLabels, typesImport = '../types' }) {
   const R = (input) => resolver.apply(brand ? { brand, ...input } : input);
   const maps = { light: R({}), dark: R({ mode: 'dark' }), surfaceDark: R({ surface: 'dark' }), surfaceDarker: R({ surface: 'darker' }), comfortable: R({ density: 'comfortable' }) };
   const ids = Object.keys(maps.light);
@@ -497,6 +520,7 @@ export function emitTs({ resolver, brand, fonts, typesImport = '../types' }) {
     body,
     `/** Type DTCG de chaque jeton. */\nexport const types = ${JSON.stringify(types, null, 2)} as const;\n`,
   ];
+  if (tierLabels) out.push(`/** Libellés des paliers de la marque, par langue (brand.json › tierLabels). */\nexport const tierLabels = ${JSON.stringify(tierLabels, null, 2)} as const;\n`);
   if (fonts) out.push(`/** Polices de la marque, avec les replis par support (voir docs/polices.md). */\nexport const fonts = ${JSON.stringify(fonts, null, 2)} as const;\n`);
   return { source: out.join('\n'), ids };
 }

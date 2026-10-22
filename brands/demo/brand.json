@@ -4,5 +4,9 @@
   "description": "Marque de démonstration, volontairement éloignée du thème neutre : teintes chaudes, magenta et lime, grands rayons, police à empattement, six paliers de données. Elle sert aux tests et aux captures, jamais à un produit.",
   "tokens": "tokens.json",
   "fonts": "fonts.json",
-  "dataScale": { "steps": 6 }
+  "dataScale": { "steps": 6 },
+  "tierLabels": {
+    "fr": ["Excellent", "Solide", "Correct", "Fragile", "Très fragile", "Critique"],
+    "en": ["Excellent", "Solid", "Fair", "Fragile", "Very fragile", "Critical"]
+  }
 }
