@@ -24,7 +24,10 @@ export function readDataScale(element?: Element): DataScale {
 
 /** Palier (1 à count) d'une valeur de 0 à 100. */
 export function tierOf(value: number, scale: DataScale, higherIsBetter = false): number {
-  const v = Math.min(100, Math.max(0, higherIsBetter ? 100 - value : value));
+  // Arrondi à 1e-6 : 2,75 / 5 × 100 donne 55,00000000000001 et 100 − 55,00000000000001 passerait
+  // sous la borne 45 ; une valeur sur une borne doit toujours tomber du côté de la borne.
+  const round = (x: number) => Math.round(x * 1e6) / 1e6
+  const v = Math.min(100, Math.max(0, round(higherIsBetter ? 100 - round(value) : value)));
   let tier = 1;
   for (const t of scale.thresholds.slice(0, scale.count - 1)) if (v >= t) tier += 1;
   return Math.min(tier, scale.count);
