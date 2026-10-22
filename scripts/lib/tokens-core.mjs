@@ -98,14 +98,16 @@ function quoteFamily(f) {
   return GENERIC.has(f) || /^[A-Za-z][A-Za-z-]*$/.test(f) ? f : `"${f}"`;
 }
 
-function colorToCss(v) {
+export function colorToCss(v) {
   const a = v.alpha ?? 1;
   const alpha = a === 1 ? '' : ` / ${num(a)}`;
   const [c1, c2, c3] = v.components;
   if (v.colorSpace === 'oklch') return `oklch(${num(c1)} ${num(c2)} ${num(c3)}${alpha})`;
   if (v.colorSpace === 'srgb') {
     if (v.hex && a === 1) return v.hex.toLowerCase();
-    return `rgb(${num(c1 * 255)} ${num(c2 * 255)} ${num(c3 * 255)}${alpha})`;
+    // Canaux sur 0-255 arrondis au centième : 0,1137254902 × 255 vaut 28,9999999 en flottant, pas « 28.9999 ».
+    const ch = (x) => String(Math.round(x * 255 * 100) / 100);
+    return `rgb(${ch(c1)} ${ch(c2)} ${ch(c3)}${alpha})`;
   }
   return `color(${v.colorSpace} ${v.components.map(num).join(' ')}${alpha})`;
 }

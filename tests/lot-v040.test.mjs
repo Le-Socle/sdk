@@ -31,6 +31,14 @@ test('chaque utilitaire type-* écrit font-variant-numeric après font', async (
   }
 });
 
+// ---- 7. sorties arrondies
+test('colorToCss : pas de rgb(0 28.9999 61.0001 / 0.08), les canaux sont arrondis au centième', async () => {
+  const { colorToCss } = await import('../scripts/lib/tokens-core.mjs');
+  const css = colorToCss({ colorSpace: 'srgb', components: [0, 28.9999 / 255, 61.0001 / 255], alpha: 0.08 });
+  assert.equal(css, 'rgb(0 29 61 / 0.08)');
+  assert.equal(colorToCss({ colorSpace: 'srgb', components: [0.5, 0.25, 1] }), 'rgb(127.5 63.75 255)');
+});
+
 // ---- 2. tierOf aux bornes
 const scale4 = { count: 4, thresholds: [25, 50, 75] };
 const scale6 = { count: 6, thresholds: [20, 30, 45, 60, 75] };
