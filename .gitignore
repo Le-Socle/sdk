@@ -1,0 +1,8 @@
+node_modules/
+storybook-static/
+dist/
+generated/
+*.log
+*.tgz
+.DS_Store
+src/tokens/generated/

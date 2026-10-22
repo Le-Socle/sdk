@@ -1,0 +1,52 @@
+/* ============================================================================
+   Entrée « base.css » du SDK : préflight Tailwind et règles de base
+   ============================================================================
+   Le préflight de Tailwind et les règles de base : police, couleur et fond de la page,
+   couleur des filets, sélection, liens, curseur des contrôles. À importer après tokens.css
+   et theme.css par une application qui part de zéro. Aucune valeur de marque ici : tout
+   vient des variables des jetons. */
+
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/preflight.css" layer(base);
+
+@layer base {
+  html {
+    font: var(--type-body-weight) var(--type-body-size)/var(--type-body-leading) var(--type-body-family);
+    color: var(--foreground);
+    background: var(--background);
+    -webkit-font-smoothing: antialiased;
+    scrollbar-color: var(--input) var(--background);
+    scroll-padding-top: var(--space-20);
+  }
+
+  /* Tailwind 4 peint les filets en currentcolor : on leur rend leur couleur. */
+  *,
+  ::after,
+  ::before {
+    border-color: var(--border);
+  }
+
+  ::selection {
+    background: var(--color-brand-subtle);
+    color: var(--color-text-heading);
+  }
+
+  a {
+    text-underline-offset: var(--space-1);
+  }
+
+  /* Un contrôle qu'on peut activer se signale au survol. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
+
+  /* Les chiffres sont tabulaires partout où l'on compte. */
+  table,
+  [data-figure] {
+    font-variant-numeric: var(--numeric-tabular);
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "name": "@le-socle/sdk",
+  "version": "0.0.0",
+  "description": "SDK du Socle : jetons, composants, archétypes et rendu pour toutes les surfaces d'une société. Aucune marque dedans : chaque société branche la sienne.",
+  "private": false,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Le-Socle/sdk.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens/index.d.ts",
+      "default": "./dist/tokens/index.js"
+    },
+    "./ui": {
+      "types": "./dist/ui/index.d.ts",
+      "default": "./dist/ui/index.js"
+    },
+    "./app": {
+      "types": "./dist/app/index.d.ts",
+      "default": "./dist/app/index.js"
+    },
+    "./site": {
+      "types": "./dist/site/index.d.ts",
+      "default": "./dist/site/index.js"
+    },
+    "./slides": {
+      "types": "./dist/slides/index.d.ts",
+      "default": "./dist/slides/index.js"
+    },
+    "./document": {
+      "types": "./dist/document/index.d.ts",
+      "default": "./dist/document/index.js"
+    },
+    "./email": {
+      "types": "./dist/email/index.d.ts",
+      "default": "./dist/email/index.js"
+    },
+    "./social": {
+      "types": "./dist/social/index.d.ts",
+      "default": "./dist/social/index.js"
+    },
+    "./render": {
+      "types": "./dist/render/index.d.ts",
+      "default": "./dist/render/index.js"
+    },
+    "./tokens.css": "./dist/css/tokens.css",
+    "./theme.css": "./dist/css/theme.css",
+    "./base.css": "./dist/css/base.css",
+    "./fonts.css": "./dist/css/fonts.css",
+    "./tokens.dtcg.json": "./dist/tokens/tokens.dtcg.json",
+    "./brands/demo.css": "./dist/brands/demo/brand.css",
+    "./brands/demo": {
+      "types": "./dist/brands/demo/index.d.ts",
+      "default": "./dist/brands/demo/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "docs/correspondance-jetons.md",
+    "docs/polices.md"
+  ],
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "npm run tokens && storybook build",
+    "build:lib": "npm run tokens && vite build -c vite.lib.config.ts && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json --resolve-full-paths && node scripts/copy-assets.mjs",
+    "prepare": "npm run build:lib",
+    "typecheck": "npm run tokens && tsc --noEmit -p .",
+    "lint": "oxlint src stories scripts brands .storybook",
+    "test": "node --test --test-concurrency=1 tests/",
+    "check:tokens": "node scripts/check-tokens.mjs",
+    "check:hardcoded": "node scripts/check-hardcoded.mjs",
+    "check:brands": "node scripts/check-brands.mjs",
+    "check:contrast": "node scripts/contrast-count.mjs",
+    "check:mapping": "node scripts/check-mapping.mjs",
+    "check": "npm run typecheck && npm run lint && npm run check:tokens && npm run check:mapping && npm run check:brands && npm run check:hardcoded && npm run check:contrast && npm test",
+    "verify:stories": "node scripts/verify-stories.mjs",
+    "prepublishOnly": "npm run check && npm run build:lib"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "optionalDependencies": {},
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.0.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/fraunces": "^5.2.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.2.0",
+    "@storybook/addon-a11y": "^10.6.0",
+    "@storybook/addon-docs": "^10.6.0",
+    "@storybook/react-vite": "^10.6.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@terrazzo/cli": "^2.10.0",
+    "@terrazzo/parser": "^2.10.0",
+    "@terrazzo/plugin-css": "^2.10.0",
+    "@terrazzo/plugin-js": "^2.10.0",
+    "@terrazzo/plugin-tailwind": "^2.10.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "axe-core": "^4.13.0",
+    "colorjs.io": "^0.7.1",
+    "oxlint": "^1.0.0",
+    "playwright-core": "^1.63.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "storybook": "^10.6.0",
+    "style-dictionary": "^5.7.0",
+    "tailwindcss": "^4.3.3",
+    "tsc-alias": "^1.9.7",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1"
+  }
+}
