@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 /**
  * Échelle de données à paliers. La marque fixe le nombre de paliers (4 ou 6) et leurs seuils dans
  * ses jetons (`--data-count`, `--data-threshold-N`) ; les graphiques lisent « palier N » et ne
@@ -23,18 +21,6 @@ export function readDataScale(element?: Element): DataScale {
   return thresholds.every(Number.isFinite) ? { count, thresholds } : defaultScale;
 }
 
-const same = (a: DataScale, b: DataScale) => a.count === b.count && a.thresholds.join() === b.thresholds.join();
-
-/** L'échelle de la marque en vigueur ; `override` la remplace (tests, graphique figé). */
-export function useDataScale(override?: DataScale): DataScale {
-  const [scale, setScale] = React.useState<DataScale>(defaultScale);
-  React.useLayoutEffect(() => {
-    if (override) return;
-    const next = readDataScale();
-    setScale((prev) => (same(prev, next) ? prev : next));
-  });
-  return override ?? scale;
-}
 
 /** Palier (1 à count) d'une valeur de 0 à 100. */
 export function tierOf(value: number, scale: DataScale, higherIsBetter = false): number {

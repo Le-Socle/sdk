@@ -1,10 +1,13 @@
+"use client"
+
 import * as React from "react"
 
 import { cn } from "../../lib/cn"
-import { useMessages } from "../messages"
+import { fillMessage, useMessages } from "../messages"
 import { ChartKey } from "./chart"
 import { formatNumber, formatPercent } from "./format"
-import { tierVar, useDataScale, type DataScale } from "./scale"
+import { tierVar, type DataScale } from "./scale"
+import { useDataScale } from "./use-data-scale"
 
 /**
  * Distribution : comment un ensemble se répartit entre les paliers de l'échelle de données. Une
@@ -26,7 +29,7 @@ function Distribution({ counts, tierLabels, scale: scaleProp, size = "md", class
   const messages = useMessages()
   const values = Array.from({ length: scale.count }, (_, i) => counts[i] ?? 0)
   const total = values.reduce((a, b) => a + b, 0)
-  const label = (i: number) => tierLabels?.[i] ?? messages.tierShort(i + 1)
+  const label = (i: number) => tierLabels?.[i] ?? fillMessage(messages.tierShort, { n: i + 1 })
   const spoken = values.map((v, i) => `${label(i)} : ${formatNumber(v, messages.locale)}`).join(", ")
   return (
     <div data-slot="distribution" data-size={size} className={cn("flex w-full min-w-0 flex-col gap-3", className)} {...props}>

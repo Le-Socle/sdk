@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 import { Slot } from "radix-ui"
 import { ChevronRightIcon, EllipsisIcon } from "lucide-react"

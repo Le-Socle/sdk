@@ -1,9 +1,12 @@
+"use client"
+
 import * as React from "react"
 
 import { cn } from "../../lib/cn"
-import { useMessages } from "../messages"
+import { fillMessage, useMessages } from "../messages"
 import { formatNumber } from "./format"
-import { tierOf, tierVar, useDataScale, type DataScale } from "./scale"
+import { tierOf, tierVar, type DataScale } from "./scale"
+import { useDataScale } from "./use-data-scale"
 
 /**
  * Jauge : un demi-cercle découpé en autant de segments que l'échelle de la marque a de paliers
@@ -52,7 +55,7 @@ function Gauge({ label, value, max = 100, higherIsBetter = false, scale: scalePr
   const tier = pct === null ? null : tierOf(pct, scale, higherIsBetter)
   const bounds = [0, ...scale.thresholds.slice(0, scale.count - 1), 100]
   const segments = Array.from({ length: scale.count }, (_, i) => ({ from: bounds[i] ?? 0, to: bounds[i + 1] ?? 100, tier: higherIsBetter ? scale.count - i : i + 1 }))
-  const tierText = tier ? (tierLabels?.[tier - 1] ?? messages.tier(tier, scale.count)) : messages.notRated
+  const tierText = tier ? (tierLabels?.[tier - 1] ?? fillMessage(messages.tier, { n: tier, count: scale.count })) : messages.notRated
   const spoken = value === null ? `${label} : ${messages.notRated}` : `${label} : ${formatNumber(value, messages.locale)} / ${formatNumber(max, messages.locale)}, ${tierText}`
   const marker = pct === null ? null : at(pct, R)
   const markerIn = pct === null ? null : at(pct, R - STROKE)
@@ -71,7 +74,7 @@ function Gauge({ label, value, max = 100, higherIsBetter = false, scale: scalePr
       </svg>
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 flex flex-col items-center text-chart-label">
         <span className={size === "lg" ? "type-title" : "type-figure"}>{display ?? (value === null ? "–" : formatNumber(value, messages.locale))}</span>
-        <span className="type-caption text-chart-axis">{tier ? (tierLabels?.[tier - 1] ?? messages.tierShort(tier)) : messages.notRated}</span>
+        <span className="type-caption text-chart-axis">{tier ? (tierLabels?.[tier - 1] ?? fillMessage(messages.tierShort, { n: tier })) : messages.notRated}</span>
       </div>
     </div>
   )

@@ -33,7 +33,8 @@ export type Messages = {
   pagination: string;
   previous: string;
   next: string;
-  page: (n: number) => string;
+  /** Gabarit : `{n}` est remplacé par le numéro de la page. */
+  page: string;
   morePages: string;
   /** Fil d'Ariane. */
   breadcrumb: string;
@@ -45,10 +46,10 @@ export type Messages = {
   avatar: string;
   /** Graphiques et données. */
   locale: string;
-  /** Palier de l'échelle : lu (« Palier 2 sur 4 »). */
-  tier: (n: number, count: number) => string;
-  /** Palier de l'échelle : affiché (« Palier 2 »). */
-  tierShort: (n: number) => string;
+  /** Palier de l'échelle, lu : gabarit avec `{n}` et `{count}` (« Palier 2 sur 4 »). */
+  tier: string;
+  /** Palier de l'échelle, affiché : gabarit avec `{n}` (« Palier 2 »). */
+  tierShort: string;
   noData: string;
   notRated: string;
   chartTable: string;
@@ -73,7 +74,7 @@ export const messagesFr: Messages = {
   pagination: 'Pagination',
   previous: 'Précédent',
   next: 'Suivant',
-  page: (n) => `Page ${n}`,
+  page: 'Page {n}',
   morePages: 'Plus de pages',
   breadcrumb: 'Fil d’Ariane',
   morePath: 'Niveaux masqués',
@@ -81,14 +82,22 @@ export const messagesFr: Messages = {
   toggleSidebar: 'Afficher ou masquer la barre latérale',
   avatar: 'Avatar',
   locale: 'fr-FR',
-  tier: (n, count) => `Palier ${n} sur ${count}`,
-  tierShort: (n) => `Palier ${n}`,
+  tier: 'Palier {n} sur {count}',
+  tierShort: 'Palier {n}',
   noData: 'Aucune donnée.',
   notRated: 'Non évalué',
   chartTable: 'Données du graphique',
   chartValue: 'Valeur',
   chartCategory: 'Catégorie',
 };
+
+/**
+ * Remplit un gabarit de message : `fillMessage('Page {n}', { n: 3 })` donne « Page 3 ». Les messages
+ * sont des chaînes (jamais des fonctions) pour passer d'un composant serveur à un composant client.
+ */
+export function fillMessage(template: string, values: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (all, key: string) => (key in values ? String(values[key]) : all));
+}
 
 const MessagesContext = React.createContext<Messages>(messagesFr);
 

@@ -6,7 +6,8 @@ import { Bar, BarChart as RBarChart, CartesianGrid, Cell, LabelList, Tooltip, XA
 import { useMessages } from "../messages"
 import { ChartArea, ChartFrame, ChartLegend, ChartTooltipBox, type ChartSize, type LegendItem } from "./chart"
 import { formatNumber } from "./format"
-import { seriesVar, tierOf, tierVar, useDataScale, type DataScale } from "./scale"
+import { seriesVar, tierOf, tierVar, type DataScale } from "./scale"
+import { useDataScale } from "./use-data-scale"
 
 /**
  * Barres : comparer des catégories. Horizontales (libellés longs) ou verticales ; plusieurs séries

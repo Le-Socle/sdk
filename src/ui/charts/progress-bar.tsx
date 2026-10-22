@@ -1,9 +1,12 @@
+"use client"
+
 import * as React from "react"
 
 import { cn } from "../../lib/cn"
 import { useMessages } from "../messages"
 import { formatNumber } from "./format"
-import { tierOf, tierVar, useDataScale, type DataScale } from "./scale"
+import { tierOf, tierVar, type DataScale } from "./scale"
+import { useDataScale } from "./use-data-scale"
 
 /**
  * Barre : une valeur sur un maximum, sur une piste. Sans `tiered`, elle prend la couleur d'action ;

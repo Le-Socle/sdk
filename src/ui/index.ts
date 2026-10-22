@@ -1,6 +1,6 @@
 // Point d'entrée « ui » : composants d'interface (étage 2). Un fichier par composant, lu depuis les rôles et les jetons.
 export { cn } from "../lib/cn"
-export { MessagesProvider, messagesFr, useMessages, type Messages } from "./messages"
+export { fillMessage, MessagesProvider, messagesFr, useMessages, type Messages } from "./messages"
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion"
 export { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, AlertDialogPortal, AlertDialogTitle, AlertDialogTrigger } from "./alert-dialog"
 export { Avatar, AvatarFallback, AvatarGroup, AvatarImage, avatarVariants } from "./avatar"

@@ -1,9 +1,12 @@
+"use client"
+
 import * as React from "react"
 
 import { cn } from "../../lib/cn"
-import { useMessages } from "../messages"
+import { fillMessage, useMessages } from "../messages"
 import { formatNumber } from "./format"
-import { tierOf, tierVar, useDataScale, type DataScale } from "./scale"
+import { tierOf, tierVar, type DataScale } from "./scale"
+import { useDataScale } from "./use-data-scale"
 
 /**
  * Arc : un anneau qui se remplit d'une valeur, avec la valeur au centre. Couleur du palier (échelle
@@ -51,7 +54,7 @@ function Arc({ label, value, max = 100, tiered = false, higherIsBetter = false, 
   const end = ratio * 360
   const fill = end > 0 ? arcPath(0, Math.min(end, 360 - CAP)) : null
   const shown = display ?? (value === null ? "–" : formatNumber(value, messages.locale))
-  const spoken = value === null ? `${label} : ${messages.notRated}` : `${label} : ${formatNumber(value, messages.locale)} / ${formatNumber(max, messages.locale)}${tier ? `, ${messages.tier(tier, scale.count)}` : ""}`
+  const spoken = value === null ? `${label} : ${messages.notRated}` : `${label} : ${formatNumber(value, messages.locale)} / ${formatNumber(max, messages.locale)}${tier ? `, ${fillMessage(messages.tier, { n: tier, count: scale.count })}` : ""}`
   return (
     <div role="img" aria-label={spoken} data-slot="arc" data-size={size} data-tier={tier ?? undefined} className={cn("relative shrink-0", size === "lg" && "size-64", size === "md" && "size-40", size === "sm" && "size-24", className)} {...props}>
       <svg aria-hidden="true" viewBox={`0 0 ${VIEW} ${VIEW}`} className="size-full" fill="none" strokeLinecap="round" strokeWidth={STROKE} focusable="false">

@@ -7,7 +7,7 @@ Le SDK du Socle fabrique toutes les surfaces d'une société (application, site,
 | Étage | Dossier | Point d'entrée | État |
 |---|---|---|---|
 | 1. Jetons | `tokens/` (source DTCG : `value/`, `role/`, `component/`, `mode/`), `brands/<id>/` (marques du dépôt), `fonts/` (polices du neutre) | `@le-socle/sdk/tokens` | en place |
-| 2. Composants | `src/ui/` | `@le-socle/sdk/ui` | squelette, rempli au lot 2 |
+| 2. Composants | `src/ui/` (primitives), `src/ui/charts/` (graphiques et données) | `@le-socle/sdk/ui` | en place (lot 2) |
 | 3. Archétypes | `src/site/`, `src/slides/`, `src/document/`, `src/email/`, `src/social/`, `src/app/` | `@le-socle/sdk/<support>` | squelettes |
 | 4. Gabarits | `templates/` | | à venir |
 | 5. Rendu | `src/render/` | `@le-socle/sdk/render` | squelette ; le navigateur de rendu est une dépendance optionnelle |
@@ -40,6 +40,17 @@ Sur la devbox : jamais de serveur lancé à la main (`storybook dev`, `vite`) ; 
 ## Brancher une marque
 
 Un paquet de marque contient `brand.json`, `tokens.json` (jetons DTCG qui remplacent des valeurs et des rôles), `fonts.json` (familles, fichiers, licences, replis) et ses fichiers de police. Voir la page « Documentation / Créer une marque » de Storybook et `brands/demo/` (exemple, volontairement éloigné du neutre).
+
+## Composants (étage 2)
+
+- Un fichier par composant dans `src/ui/`, une story dans `stories/ui/`. Les graphiques sont dans `src/ui/charts/` ; ils lisent l'échelle de données de la marque (`--data-count`, `--data-threshold-N`) par `useDataScale` et ne savent pas combien de paliers elle a (4 ou 6).
+- Un composant lit des **classes de rôle ou de composant** (`bg-primary`, `h-control-md`, `border-divider`, `bg-chart-track`, `text-data-3-text`). Un jeton de composant manquant s'ajoute dans `tokens/component/components.tokens.json` (alias d'un rôle), jamais en dur ; `npm run tokens` le propage au thème Tailwind. Une surface sombre remappe les jetons de composant dans `tokens/mode/surface-*.tokens.json`.
+- **Une seule hauteur de contrôle par taille et par densité** : champ (`Input`), sélecteur (`SelectTrigger`) et `Button` lisent `--control-sm|md|lg` ; la story « Alignement des contrôles » et `verify:stories` le mesurent (`data-aligne`).
+- **Textes intégrés** : jamais en dur. `MessagesProvider` (objet `Partial<Messages>`, français par défaut) ou la propriété du composant. Les messages sont des chaînes à gabarit (`'Page {n}'`, `fillMessage`) et non des fonctions : ils passent d'un composant serveur à un composant client.
+- **`"use client"`** en tête de tout fichier qui utilise un crochet React, Radix, recharts, cmdk ou sonner. Sans lui, `next build` échoue à la prégénération.
+- **Classes de jeton et `cn`** : `src/lib/cn.ts` connaît `h-control-*`, `z-layer-*`, `duration-*`, `type-*`, `rounded-detail|mark|dot`, `shadow-1|2|3` (test : `tests/cn.test.mjs`). Une famille de jeton neuve s'y ajoute.
+- **Stories** : `Matrix` (`stories/lib/matrix.tsx`) pose le composant sur fond clair et sur surface sombre, dans les deux densités ; états forcés par `storybook-addon-pseudo-states` (`parameters.pseudo`). Une liste Radix ouverte masque la page (aria-hidden) : l'étiquette `axe-aria-hidden-ok` écarte cette seule règle pour la story concernée.
+- Outils : `node scripts/capture-stories.mjs --out <dossier> --match <texte>` (captures à regarder), `node scripts/find-overflow.mjs <id> <largeur>` (cherche ce qui déborde).
 
 ## Documents de référence
 

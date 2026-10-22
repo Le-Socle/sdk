@@ -1,3 +1,5 @@
+"use client"
+
 import * as React from "react"
 
 import { cn } from "../../lib/cn"
@@ -43,7 +45,7 @@ function FiguresTable({ caption, columns, rows, total, size = "md", className, .
         </thead>
         <tbody>
           {rows.map((r, k) => (
-            <tr key={k} className="border-b border-border-subtle">
+            <tr key={k} className="border-b border-divider">
               {columns.map((c, i) =>
                 i === 0 ? (
                   <th key={c.key} scope="row" className="px-3 py-2 text-left font-normal text-chart-label">{cell(c, r[c.key])}</th>

@@ -89,6 +89,10 @@
       "destructive-text": {
         "$type": "color",
         "$value": "{role.color.status.error.bg}"
+      },
+      "divider": {
+        "$type": "color",
+        "$value": "{role.color.border.inverse}"
       }
     },
     "button": {

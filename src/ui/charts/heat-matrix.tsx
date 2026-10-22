@@ -1,10 +1,13 @@
+"use client"
+
 import * as React from "react"
 
 import { cn } from "../../lib/cn"
 import { useMessages } from "../messages"
 import { formatNumber } from "./format"
 import { ScrollRegion } from "./scroll-region"
-import { tierOf, useDataScale, type DataScale } from "./scale"
+import { tierOf, type DataScale } from "./scale"
+import { useDataScale } from "./use-data-scale"
 import { TIER_CLASSES } from "./status-pill"
 
 /**

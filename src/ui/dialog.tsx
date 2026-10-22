@@ -111,8 +111,8 @@ function DialogBody({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="dialog-body"
       {...(defile ? { tabIndex: 0, role: "region", "aria-label": messages.dialogContent } : {})}
       className={cn(
-        "focus-ring-inset -mx-6 min-h-0 flex-1 overflow-y-auto px-6 wrap-anywhere",
-        defile && "border-y border-border-subtle",
+        "focus-ring-inset -mx-6 -my-1 min-h-0 flex-1 overflow-y-auto px-6 py-1 wrap-anywhere",
+        defile && "border-y border-divider",
         className
       )}
       {...props}

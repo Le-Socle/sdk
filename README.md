@@ -19,14 +19,14 @@ Storybook montre chaque étage, support par support. Les lots 0 et 1 (fondations
 ## Installer
 
 ```sh
-npm install github:Le-Socle/sdk#v0.1.0
+npm install github:Le-Socle/sdk#v0.2.0
 ```
 
 Dépôt public : aucun jeton. Installer le paquet n'installe aucun navigateur ; un navigateur de rendu est une dépendance optionnelle des exports.
 
 ```ts
 import { neutral, raw } from '@le-socle/sdk/tokens';   // valeurs brutes (e-mail, PowerPoint, graphiques)
-import { cn } from '@le-socle/sdk/ui';
+import { Button, Input, MessagesProvider, BarChart } from '@le-socle/sdk/ui';   // 33 primitives + graphiques
 ```
 
 ## Brancher une marque
@@ -40,7 +40,12 @@ Côté web, la feuille de la marque passe **après** celle du SDK :
 @import "@le-socle/sdk/theme.css";   /* thème Tailwind 4 */
 @import "@le-socle/sdk/base.css";
 @import "@ma-societe/marque/brand.css";
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
 ```
+
+`theme.css` déclare lui-même où sont les composants compilés (`@source`) : l'application n'écrit aucun `@source` pour `node_modules`. Les composants viennent avec `radix-ui`, `recharts`, `cmdk`, `sonner`, `lucide-react` et `class-variance-authority` (dépendances du paquet).
+
+Textes intégrés en français par défaut ; pour une autre langue : `<MessagesProvider messages={{ close: 'Close', previous: 'Previous' }}>`.
 
 Côté valeurs brutes, le paquet de la marque exporte le même objet que `neutral` et on le passe aux e-mails, au PowerPoint, aux graphiques. Thème clair par défaut ; `data-theme="dark"` pour le sombre complet, `data-surface="dark"` pour une section sombre. Un exemple complet : `brands/demo/` ; le pas à pas : page « Créer une marque » de Storybook.
 

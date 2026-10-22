@@ -361,6 +361,16 @@
             "cssName": "destructive-text"
           }
         }
+      },
+      "divider": {
+        "$type": "color",
+        "$value": "{role.color.border.subtle}",
+        "$description": "Filet discret : séparation de lignes de tableau, de zones d'une fenêtre.",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "divider"
+          }
+        }
       }
     },
     "button": {

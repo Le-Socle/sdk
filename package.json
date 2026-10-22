@@ -1,6 +1,6 @@
 {
   "name": "@le-socle/sdk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "SDK du Socle : jetons, composants, archétypes et rendu pour toutes les surfaces d'une société. Aucune marque dedans : chaque société branche la sienne.",
   "private": false,
   "license": "UNLICENSED",
@@ -80,7 +80,7 @@
     "tokens": "node scripts/build-tokens.mjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "npm run tokens && storybook build",
-    "build:lib": "npm run tokens && vite build -c vite.lib.config.ts && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json --resolve-full-paths && node scripts/copy-assets.mjs",
+    "build:lib": "npm run tokens && vite build -c vite.lib.config.ts && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json --resolve-full-paths --inputglob \"dist/**/*.d.ts\" && node scripts/copy-assets.mjs",
     "prepare": "npm run build:lib",
     "typecheck": "npm run tokens && tsc --noEmit -p .",
     "lint": "oxlint src stories scripts brands .storybook",
