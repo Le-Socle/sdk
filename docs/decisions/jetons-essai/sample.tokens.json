@@ -1,0 +1,48 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "color": {
+    "$type": "color",
+    "value": {
+      "neutral": {
+        "50": { "$value": { "colorSpace": "srgb", "components": [0.96, 0.96, 0.97], "hex": "#f5f5f7" } },
+        "700": { "$value": { "colorSpace": "srgb", "components": [0.27, 0.27, 0.3], "hex": "#45454d" } },
+        "900": { "$value": { "colorSpace": "oklch", "components": [0.25, 0.04, 260] } }
+      },
+      "action": {
+        "600": { "$value": { "colorSpace": "oklch", "components": [0.5, 0.15, 255] } }
+      }
+    },
+    "bg": {
+      "page": { "$value": "{color.value.neutral.50}", "$extensions": { "mode": { "dark": "{color.value.neutral.900}" } } }
+    },
+    "text": {
+      "primary": { "$value": "{color.value.neutral.700}", "$extensions": { "mode": { "dark": "{color.value.neutral.50}" } } }
+    },
+    "action": {
+      "base": { "$value": "{color.value.action.600}" }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "1": { "$value": { "value": 4, "unit": "px" } },
+    "2": { "$value": { "value": 8, "unit": "px" } }
+  },
+  "duration": {
+    "$type": "duration",
+    "fast": { "$value": { "value": 200, "unit": "ms" } }
+  },
+  "ease": {
+    "out": { "$type": "cubicBezier", "$value": [0.16, 1, 0.3, 1] }
+  },
+  "font": {
+    "family": {
+      "text": { "$type": "fontFamily", "$value": ["Inter Variable", "system-ui", "sans-serif"] }
+    },
+    "weight": {
+      "regular": { "$type": "fontWeight", "$value": 400 }
+    }
+  },
+  "shadow": {
+    "1": { "$type": "shadow", "$value": { "color": { "colorSpace": "srgb", "components": [0, 0, 0], "alpha": 0.1 }, "offsetX": { "value": 0, "unit": "px" }, "offsetY": { "value": 1, "unit": "px" }, "blur": { "value": 2, "unit": "px" }, "spread": { "value": 0, "unit": "px" } } }
+  }
+}

@@ -1,0 +1,27 @@
+{
+ "palette": {
+  "$type": "color",
+  "action": {
+   "600": {
+    "$value": {
+     "colorSpace": "oklch",
+     "components": [
+      0.55,
+      0.2,
+      25
+     ]
+    }
+   },
+   "300": {
+    "$value": {
+     "colorSpace": "oklch",
+     "components": [
+      0.8,
+      0.12,
+      25
+     ]
+    }
+   }
+  }
+ }
+}

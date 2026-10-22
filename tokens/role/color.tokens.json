@@ -208,15 +208,15 @@
           "$description": "Texte et icône d'une entrée au repos."
         },
         "hover": {
-          "$value": "{role.color.brand.light}",
-          "$description": "Fond d'une entrée survolée."
+          "$value": "{value.palette.neutral.800}",
+          "$description": "Fond d'une entrée survolée : un cran au-dessous de la page courante."
         },
         "active": {
           "$value": "{value.palette.primary.700}",
           "$description": "Fond de l'entrée de la page courante."
         },
         "divider": {
-          "$value": "{role.color.brand.light}",
+          "$value": "{value.palette.neutral.800}",
           "$description": "Filet qui sépare deux groupes d'entrées."
         },
         "focus": {

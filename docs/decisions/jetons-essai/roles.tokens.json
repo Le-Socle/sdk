@@ -1,0 +1,15 @@
+{
+ "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+ "color": {
+  "$type": "color",
+  "bg": {
+   "$value": "{palette.neutral.50}"
+  },
+  "text": {
+   "$value": "{palette.neutral.700}"
+  },
+  "action": {
+   "$value": "{palette.action.600}"
+  }
+ }
+}

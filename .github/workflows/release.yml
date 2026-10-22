@@ -1,0 +1,37 @@
+# Une étiquette v* crée une release avec ses notes de version. Le paquet s'installe par étiquette git
+# (github:Le-Socle/sdk#vX.Y.Z) : la release ne publie rien sur un registre.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm run build:lib
+      - name: Vérifier que l'étiquette correspond à la version du paquet
+        run: |
+          test "v$(node -p "require('./package.json').version")" = "${GITHUB_REF_NAME}" || { echo "L'étiquette ${GITHUB_REF_NAME} ne correspond pas à package.json"; exit 1; }
+      - name: Archive du paquet
+        run: npm pack
+      - name: Notes de version
+        run: node scripts/release-notes.mjs "${GITHUB_REF_NAME}" > RELEASE_NOTES.md
+      - uses: softprops/action-gh-release@v2
+        with:
+          body_path: RELEASE_NOTES.md
+          files: '*.tgz'

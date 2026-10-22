@@ -1,0 +1,425 @@
+/* Mise en page des pages de documentation de Storybook. Ne lit que des variables des jetons :
+   aucune couleur, taille ni durée écrite ici. */
+html {
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font: var(--type-body);
+  font-variant-numeric: var(--numeric-tabular);
+}
+
+.doc {
+  box-sizing: border-box;
+  max-width: var(--container-page);
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-8) var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.doc *,
+.doc *::before,
+.doc *::after {
+  box-sizing: border-box;
+}
+
+.doc h1 {
+  margin: 0;
+  font: var(--type-title);
+  letter-spacing: var(--type-title-tracking);
+  color: var(--heading);
+}
+
+.doc h2 {
+  margin: 0;
+  font: var(--type-subtitle);
+  letter-spacing: var(--type-subtitle-tracking);
+  color: var(--heading);
+}
+
+.doc h3 {
+  margin: 0;
+  font: var(--type-heading);
+  color: var(--heading);
+}
+
+.doc p {
+  margin: 0;
+  max-width: var(--container-prose);
+}
+
+.doc a {
+  color: var(--link);
+}
+
+.doc code {
+  font-family: var(--font-code);
+  font-size: var(--text-sm);
+  background: var(--muted);
+  border-radius: var(--radius-mark);
+  padding: 0 var(--space-1);
+}
+
+.doc pre {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.doc pre code {
+  background: none;
+  padding: 0;
+}
+
+.doc__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.doc__muted {
+  color: var(--muted-foreground);
+}
+
+.doc__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+.doc__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(var(--space-32) + var(--space-8)), 1fr));
+  gap: var(--space-4);
+}
+
+.doc__card {
+  background: var(--card);
+  color: var(--card-foreground);
+  border: var(--border-width-thin) solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.doc__card h3 {
+  color: var(--heading);
+}
+
+.doc__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--space-16), 1fr));
+  gap: var(--space-1);
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font: var(--type-caption);
+  min-width: 0;
+}
+
+.swatch__chip {
+  height: var(--space-12);
+  border-radius: var(--radius-md);
+  border: var(--border-width-thin) solid var(--border);
+}
+
+.swatch__name {
+  color: var(--heading);
+  font: var(--type-label-sm);
+}
+
+.swatch__value {
+  color: var(--muted-foreground);
+  overflow-wrap: anywhere;
+}
+
+.doc__table {
+  width: 100%;
+  border-collapse: collapse;
+  font: var(--type-body-sm);
+}
+
+.doc__table th,
+.doc__table td {
+  text-align: left;
+  vertical-align: top;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width-thin) solid var(--border);
+}
+
+.doc__table th {
+  color: var(--muted-foreground);
+  font: var(--type-label-sm);
+}
+
+.doc__table td:first-child {
+  white-space: nowrap;
+}
+
+.doc__scroll {
+  overflow-x: auto;
+}
+
+.doc__pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--space-32) * 2), 1fr));
+  gap: var(--space-4);
+}
+
+/* Un bloc de démonstration qui lit les rôles : posé sur un fond, une surface sombre ou un thème sombre. */
+.demo-block {
+  background: var(--background);
+  color: var(--foreground);
+  border: var(--border-width-thin) solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.demo-block h3 {
+  color: var(--heading);
+}
+
+.demo-block__label {
+  font: var(--type-caption);
+  color: var(--muted-foreground);
+}
+
+.demo-card {
+  background: var(--card);
+  color: var(--card-foreground);
+  border: var(--border-width-thin) solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.demo-button {
+  appearance: none;
+  align-self: flex-start;
+  min-height: var(--control-md);
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--button-primary-bg);
+  color: var(--button-primary-fg);
+  font: var(--type-label);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.demo-button:hover {
+  background: var(--button-primary-hover-bg);
+}
+
+.demo-button--secondary {
+  background: var(--button-secondary-bg);
+  color: var(--button-secondary-fg);
+}
+
+.demo-button:focus-visible {
+  outline: var(--focus-ring-width) solid var(--button-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.demo-link {
+  color: var(--link);
+}
+
+.pastille {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-2);
+  min-height: var(--space-5);
+  border-radius: var(--radius-detail);
+  border: var(--border-width-thin) solid var(--pastille-border);
+  background: var(--pastille-bg);
+  color: var(--pastille-text);
+  font: var(--type-label-sm);
+}
+
+.pastille::before {
+  content: '';
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-dot);
+  background: var(--pastille-mark);
+}
+
+.scale {
+  display: flex;
+  height: var(--space-6);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: var(--border-width-thin) solid var(--border);
+}
+
+.scale > span {
+  flex: 1 1 0;
+  background: var(--pastille-mark);
+}
+
+.motion-track {
+  position: relative;
+  height: var(--space-10);
+  background: var(--muted);
+  border-radius: var(--radius-md);
+}
+
+.motion-dot {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  width: var(--space-6);
+  height: var(--space-6);
+  border-radius: var(--radius-dot);
+  background: var(--primary);
+  animation: motion-slide var(--motion-duration, var(--duration-slow)) var(--motion-ease, var(--ease-out)) infinite alternate;
+}
+
+@keyframes motion-slide {
+  to {
+    left: calc(100% - var(--space-8));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-dot {
+    animation: none;
+  }
+}
+
+.type-sample {
+  display: grid;
+  grid-template-columns: calc(var(--space-32) + var(--space-8)) 1fr;
+  gap: var(--space-4);
+  align-items: baseline;
+  padding: var(--space-3) 0;
+  border-bottom: var(--border-width-thin) solid var(--border);
+}
+
+.type-sample__meta {
+  font: var(--type-caption);
+  color: var(--muted-foreground);
+}
+
+.space-bar {
+  height: var(--space-4);
+  background: var(--primary);
+  border-radius: var(--radius-mark);
+}
+
+.shape-box {
+  height: var(--space-16);
+  background: var(--secondary);
+  border: var(--border-width-thick) solid var(--input);
+}
+
+.shadow-box {
+  height: var(--space-16);
+  background: var(--card);
+  border-radius: var(--radius-md);
+}
+
+/* Maquette d'application : HTML et CSS purs, lit les rôles seulement. */
+.mock {
+  display: grid;
+  grid-template-columns: calc(var(--space-32) + var(--space-16)) 1fr;
+  min-height: calc(var(--space-32) * 3);
+  border: var(--border-width-thin) solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.mock__side {
+  background: var(--sidebar);
+  color: var(--sidebar-foreground);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mock__brand {
+  font: var(--type-heading);
+  color: var(--sidebar-primary-foreground);
+  padding: var(--space-2) var(--space-3) var(--space-4);
+}
+
+.mock__nav {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font: var(--type-label);
+}
+
+.mock__nav--hover {
+  background: var(--sidebar-accent);
+  color: var(--sidebar-accent-foreground);
+}
+
+.mock__nav--active {
+  background: var(--sidebar-primary);
+  color: var(--sidebar-primary-foreground);
+}
+
+.mock__main {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.mock__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.mock__kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(var(--space-32) + var(--space-8)), 1fr));
+  gap: var(--space-4);
+}
+
+.mock__kpi-value {
+  font: var(--type-figure);
+  font-variant-numeric: var(--numeric-tabular);
+  color: var(--heading);
+}
+
+.mock__kpi-label {
+  font: var(--type-caption);
+  color: var(--muted-foreground);
+}
+
+@media (max-width: 48rem) { /* hardcoded-ok: un point de rupture de média ne peut pas lire une variable */
+  .doc {
+    padding: var(--space-6) var(--space-4) var(--space-16);
+  }
+  .mock {
+    grid-template-columns: 1fr;
+  }
+  .type-sample {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}

@@ -9,7 +9,7 @@
 // Tout part de tokens/ et de brands/. Rien n'est écrit ailleurs que dans `genDir`.
 import fs from 'node:fs';
 import path from 'node:path';
-import { emitCss, emitDtcg, emitTheme, emitTs, loadSystem, tokenSummary } from './tokens-core.mjs';
+import { emitCss, emitDtcg, emitIndex, emitTheme, emitTs, loadSystem, tokenSummary } from './tokens-core.mjs';
 import { emitFontsCss, readFonts } from './fonts.mjs';
 
 function write(file, content) {
@@ -51,6 +51,7 @@ export async function buildAll(o) {
   const ts = emitTs({ resolver, fonts: neutralFonts.exported, typesImport });
   out('ts/neutral.ts', ts.source);
   for (const [name, input] of modes) out(`dtcg/neutral.${name}.json`, JSON.stringify(emitDtcg(resolver.apply(input)), null, 2) + '\n');
+  out('tokens-index.json', JSON.stringify(emitIndex({ resolver })) + '\n');
   const counts = tokenSummary(resolver.apply({}));
 
   // --- chaque marque

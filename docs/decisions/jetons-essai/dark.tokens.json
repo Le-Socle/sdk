@@ -1,0 +1,14 @@
+{
+ "color": {
+  "$type": "color",
+  "bg": {
+   "$value": "{palette.neutral.950}"
+  },
+  "text": {
+   "$value": "{palette.neutral.50}"
+  },
+  "action": {
+   "$value": "{palette.action.300}"
+  }
+ }
+}

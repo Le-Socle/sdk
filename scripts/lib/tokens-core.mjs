@@ -520,3 +520,31 @@ export function tokenSummary(tokens) {
 }
 
 export { CONTEXT_AXES };
+
+// ---------------------------------------------------------------- index (Storybook, documentation)
+
+/** Liste à plat des jetons du thème neutre, avec leur nom CSS, leur couche, leur description, l'alias
+ * lu (en nom CSS) et les valeurs brutes claire et sombre. Lue par les pages de jetons de Storybook :
+ * aucune valeur n'est recopiée à la main dans une page. */
+export function emitIndex({ resolver }) {
+  const light = resolver.apply({});
+  const dark = resolver.apply({ mode: 'dark' });
+  const rawL = rawMap(light);
+  const rawD = rawMap(dark);
+  const css = (id) => cssName(light[id]);
+  return Object.entries(light)
+    .filter(([id]) => !SKIP_CSS(id))
+    .map(([id, t]) => {
+      const alias = typeof t.originalValue?.$value === 'string' && /^\{(.+)\}$/.exec(t.originalValue.$value);
+      return {
+        id,
+        css: css(id),
+        layer: layerOf(id),
+        type: t.$type,
+        description: t.$description ?? '',
+        alias: alias ? css(alias[1]) : null,
+        light: rawL[id],
+        dark: JSON.stringify(rawD[id]) === JSON.stringify(rawL[id]) ? null : rawD[id],
+      };
+    });
+}

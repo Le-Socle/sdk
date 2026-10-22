@@ -81,8 +81,6 @@ const CONTEXTS = [
   { name: 'surface sombre', input: { surface: 'dark' }, surface: 'dark' },
   { name: 'surface la plus sombre', input: { surface: 'darker' }, surface: 'darker' },
 ];
-// Les paliers de données et les statuts se lisent aussi en sombre complet.
-const DARK_EXTRA = (ctx, count) => (ctx.name === 'sombre complet' ? { ...ctx, surface: 'light' } : ctx);
 
 const wcag = (a, b) => Color.contrast(new Color('srgb', a), new Color('srgb', b), 'WCAG21');
 function rgbOf(token) {
@@ -100,7 +98,7 @@ for (const brand of ['neutral', ...brands.map((b) => b.id)]) {
     const count = tokens['role.data.count'].$value;
     let ok = 0;
     let n = 0;
-    for (const p of pairsFor(DARK_EXTRA(ctx, count), count)) {
+    for (const p of pairsFor(ctx, count)) {
       const fg = tokens[p.fg];
       const bg = tokens[p.bg];
       if (!fg || !bg) {

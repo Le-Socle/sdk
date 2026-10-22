@@ -131,10 +131,6 @@
         }
       },
       "sidebar": {
-        "hover": {
-          "$type": "color",
-          "$value": "{value.palette.neutral.800}"
-        },
         "divider": {
           "$type": "color",
           "$value": "{value.palette.neutral.700}"
