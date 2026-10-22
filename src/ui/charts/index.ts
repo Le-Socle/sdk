@@ -1,0 +1,13 @@
+// Graphiques et données : briques génériques habillées par les rôles de données et l'échelle à paliers.
+export { Arc } from "./arc"
+export { BarChart, type BarSeries } from "./bar-chart"
+export { ChartArea, ChartFrame, ChartKey, ChartLegend, ChartTooltipBox, type ChartSize, type LegendItem } from "./chart"
+export { Distribution } from "./distribution"
+export { FiguresTable, type FigureColumn } from "./figures-table"
+export { formatEuro, formatNumber, formatPercent } from "./format"
+export { Gauge } from "./gauge"
+export { HeatMatrix } from "./heat-matrix"
+export { LineChart, type LineSeries } from "./line-chart"
+export { ProgressBar } from "./progress-bar"
+export { defaultScale, readDataScale, seriesVar, tierOf, tierVar, useDataScale, type DataScale } from "./scale"
+export { StatusPill, statusPillVariants } from "./status-pill"
