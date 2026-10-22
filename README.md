@@ -19,8 +19,10 @@ Storybook montre chaque étage, support par support. Les lots 0 et 1 (fondations
 ## Installer
 
 ```sh
-npm install github:Le-Socle/sdk#v0.2.0
+npm install github:Le-Socle/sdk#v0.4.0
 ```
+
+Avec Next.js et Tailwind 4, l'application déclare elle-même `tailwindcss` et `@tailwindcss/postcss` (le SDK ne les impose pas : `tailwindcss` est un pair facultatif). Sans eux, `next build` échoue avec « Cannot find module '@tailwindcss/postcss' ». Après un changement de dépendances, supprimer le dossier `.next` : Turbopack garde sinon l'ancienne résolution et l'erreur persiste alors que `next build --webpack` passe.
 
 Dépôt public : aucun jeton. Installer le paquet n'installe aucun navigateur ; un navigateur de rendu est une dépendance optionnelle des exports.
 
@@ -46,6 +48,8 @@ Côté web, la feuille de la marque passe **après** celle du SDK :
 `theme.css` déclare lui-même où sont les composants compilés (`@source`) : l'application n'écrit aucun `@source` pour `node_modules`. Les composants viennent avec `radix-ui`, `recharts`, `cmdk`, `sonner`, `lucide-react` et `class-variance-authority` (dépendances du paquet).
 
 Textes intégrés en français par défaut ; pour une autre langue : `<MessagesProvider messages={{ close: 'Close', previous: 'Previous' }}>`.
+
+Pour fabriquer la feuille d'une marque hors de ce dépôt, le SDK installé suffit : `npx socle-brand build <dossier-de-la-marque> --out generated-brand` (écrit `brand.css`, `fonts.css`, les polices, les valeurs brutes TypeScript et le JSON DTCG).
 
 Côté valeurs brutes, le paquet de la marque exporte le même objet que `neutral` et on le passe aux e-mails, au PowerPoint, aux graphiques. Thème clair par défaut ; `data-theme="dark"` pour le sombre complet, `data-surface="dark"` pour une section sombre. Un exemple complet : `brands/demo/` ; le pas à pas : page « Créer une marque » de Storybook.
 
