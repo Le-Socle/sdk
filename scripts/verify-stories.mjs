@@ -1,6 +1,6 @@
 // Rend chaque story du Storybook construit dans un navigateur headless (Playwright) et échoue si
 // une story lève une erreur, écrit dans la console en erreur, appelle un hôte distant, déborde en
-// largeur ou reste vide. Sert storybook-static par un petit serveur statique lancé dans ce
+// largeur, reste vide ou présente une violation axe (WCAG 2.x A et AA). Sert storybook-static par un petit serveur statique lancé dans ce
 // processus et arrêté à la fin : aucun serveur à lancer à la main.
 //
 // Chaque story est rendue pour : neutre et démonstration, clair et sombre complet (4 combinaisons),
@@ -13,7 +13,10 @@ import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
 import { chromium } from 'playwright-core';
+
+const axeSource = fs.readFileSync(createRequire(import.meta.url).resolve('axe-core/axe.min.js'), 'utf8');
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dir = path.join(root, 'storybook-static');
@@ -86,6 +89,14 @@ async function render(story, combo, width) {
     text: (document.querySelector('#storybook-root')?.textContent ?? '').trim().length,
     errorShown: !!document.querySelector('.sb-errordisplay:not([hidden])') && getComputedStyle(document.querySelector('.sb-errordisplay')).display !== 'none',
   }));
+  // Accessibilité : axe-core dans la page de la story (règles WCAG 2.0, 2.1 et 2.2 A et AA).
+  await page.evaluate(axeSource);
+  const axe = await page.evaluate(async () => {
+    // @ts-ignore axe est injecté par la ligne ci-dessus
+    const r = await window.axe.run(document.querySelector('#storybook-root'), { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } });
+    return r.violations.map((v) => `${v.id} (${v.nodes.length}) ${v.nodes[0]?.target?.join(' ')}`);
+  });
+  for (const v of axe) problems.push(`axe : ${v}`);
   const where = `${story.id} [${combo.brand}/${combo.theme}/${width}px]`;
   if (m.errorShown) problems.push('Storybook affiche une erreur');
   if (m.text === 0) problems.push('story vide');

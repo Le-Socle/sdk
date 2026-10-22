@@ -45,9 +45,10 @@ export function Swatch({ cssVar, label, value }: { cssVar: string; label: string
   );
 }
 
-export function Table({ head, rows }: { head: string[]; rows: ReactNode[][] }) {
+export function Table({ head, rows, label = 'Tableau' }: { head: string[]; rows: ReactNode[][]; label?: string }) {
   return (
-    <div className="doc__scroll">
+    // Région défilable : atteignable au clavier et nommée (axe, scrollable-region-focusable).
+    <div className="doc__scroll" tabIndex={0} role="region" aria-label={label}>
       <table className="doc__table">
         <thead>
           <tr>{head.map((h) => <th key={h}>{h}</th>)}</tr>

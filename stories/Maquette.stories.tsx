@@ -47,7 +47,7 @@ function Mock() {
         </div>
         <div className="demo-card">
           <h3>Projets</h3>
-          <div className="doc__scroll">
+          <div className="doc__scroll" tabIndex={0} role="region" aria-label="Liste des projets">
             <table className="doc__table">
               <thead><tr><th>Projet</th><th>Responsable</th><th>Montant</th><th>État</th></tr></thead>
               <tbody>
