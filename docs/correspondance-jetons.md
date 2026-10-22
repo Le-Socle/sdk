@@ -2,7 +2,20 @@
 
 Source : apoleos-design-system tokens/tokens.css, branche main (0.4.0 + landing v3). Fichier généré depuis `docs/correspondance-jetons.json` par `node scripts/check-mapping.mjs --write`.
 
-La marque APOLEOS s'en sert pour réécrire ses jetons dans son propre paquet. 246 variables d'origine : 143 identiques, 69 renommées, 32 fusionnées dans l'échelle de données, 2 laissées hors du SDK.
+La marque APOLEOS s'en sert pour réécrire ses jetons dans son propre paquet. 246 variables d'origine : 138 identiques, 69 renommées, 32 fusionnées dans l'échelle de données, 2 laissées hors du SDK, 5 équivalentes (même rendu, mais une valeur calculée une fois à la place d'un `color-mix()`).
+
+## Risque et nombre de paliers
+
+L'ancienne échelle de risque a quatre niveaux (faible, moyen, élevé, critique) ; le SDK a une échelle de données à 4 ou 6 paliers, fixée par la marque. Palier 1 = le plus favorable.
+
+| Ancien niveau de risque | Marque à 4 paliers | Marque à 6 paliers (exemple : 2, 3, 4, 6) |
+|---|---|---|
+| faible (`risk-low`) | palier 1 | palier 2 (le palier 1 est un « excellent » neuf) |
+| moyen (`risk-medium`) | palier 2 | palier 3 |
+| élevé (`risk-high`) | palier 3 | palier 4 |
+| critique (`risk-critical`) | palier 4 | palier 6 (le palier 5 est un « très fragile » neuf) |
+
+Les tableaux ci-dessous donnent l'affectation d'une marque à **4 paliers**. Une marque à 6 paliers choisit elle-même quels paliers reprennent les quatre couleurs d'état d'origine ; les paliers 5 et 6 n'ont pas d'ancien nom (ce sont des jetons nouveaux : `--color-data-5-*`, `--color-data-6-*`). Les libellés des paliers viennent de `brand.json` (`tierLabels`).
 
 Règles de nommage : une couche par préfixe. Valeurs : `--palette-*`, `--font-*`, `--text-*`, `--weight-*`, `--leading-*`, `--tracking-*`, `--space-*`, `--ease-*`, `--duration-*`. Rôles : `--color-*`, `--type-*`, `--radius-*`, `--shadow-*`, `--control-*`, `--row-*`, `--layer-*`, `--container-*`, `--breakpoint-*`, `--data-*`. Composants : `--background`, `--primary`… (vocabulaire shadcn/ui) et `--<composant>-<partie>` (`--button-primary-bg`…). Aucune teinte de marque dans un nom : le bleu de Prusse devient `primary`, le Black Cherry `accent`, le Noyer `secondary`, le gris bleuté `neutral`.
 
@@ -33,58 +46,58 @@ Règles de nommage : une couche par préfixe. Valeurs : `--palette-*`, `--font-*
 | `--color-error-border` | `--color-status-error-border` | renommé | Statuts : alias d'état, rangés sous status. |
 | `--color-error-text` | `--color-status-error-text` | renommé | Statuts : alias d'état, rangés sous status. |
 | `--color-field-blush` | `--color-field-accent-soft` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. |
-| `--color-field-blush-line` | `--color-field-accent-soft-line` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. |
+| `--color-field-blush-line` | `--color-field-accent-soft-line` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. L’ancienne valeur était un color-mix() : elle devient une couleur calculée une fois. |
 | `--color-field-cherry` | `--color-field-accent` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. |
-| `--color-field-cherry-line` | `--color-field-accent-line` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. |
+| `--color-field-cherry-line` | `--color-field-accent-line` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. L’ancienne valeur était un color-mix() : elle devient une couleur calculée une fois. |
 | `--color-field-prusse` | `--color-field-strong` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. |
-| `--color-field-prusse-line` | `--color-field-strong-line` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. |
+| `--color-field-prusse-line` | `--color-field-strong-line` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. L’ancienne valeur était un color-mix() : elle devient une couleur calculée une fois. |
 | `--color-field-sky` | `--color-field-soft` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. |
-| `--color-field-sky-line` | `--color-field-soft-line` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. |
+| `--color-field-sky-line` | `--color-field-soft-line` | renommé | Aplat de tuile de profil : le nom de couleur de marque devient un rôle. L’ancienne valeur était un color-mix() : elle devient une couleur calculée une fois. |
 | `--color-focus` | `--color-focus-base` | renommé |  |
 | `--color-focus-inverse` | `--color-focus-inverse` | identique |  |
 | `--color-info` | `--color-status-info` | renommé | Statuts : alias d'état, rangés sous status. |
 | `--color-info-bg` | `--color-status-info-bg` | renommé | Statuts : alias d'état, rangés sous status. |
 | `--color-info-border` | `--color-status-info-border` | renommé | Statuts : alias d'état, rangés sous status. |
 | `--color-info-text` | `--color-status-info-text` | renommé | Statuts : alias d'état, rangés sous status. |
-| `--color-level-correct` | `--color-data-2-mark` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-correct-bg` | `--color-data-2-bg` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-correct-border` | `--color-data-2-border` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-correct-text` | `--color-data-2-text` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-critical` | `--color-data-4-mark` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-critical-bg` | `--color-data-4-bg` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-critical-border` | `--color-data-4-border` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-critical-text` | `--color-data-4-text` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-fragile` | `--color-data-3-mark` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-fragile-bg` | `--color-data-3-bg` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-fragile-border` | `--color-data-3-border` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-fragile-text` | `--color-data-3-text` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-solid` | `--color-data-1-mark` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-solid-bg` | `--color-data-1-bg` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-solid-border` | `--color-data-1-border` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-level-solid-text` | `--color-data-1-text` | fusionné | L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-overlay` | `--color-overlay` | identique |  |
+| `--color-level-correct` | `--color-data-2-mark` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-correct-bg` | `--color-data-2-bg` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-correct-border` | `--color-data-2-border` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-correct-text` | `--color-data-2-text` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-critical` | `--color-data-4-mark` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-critical-bg` | `--color-data-4-bg` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-critical-border` | `--color-data-4-border` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-critical-text` | `--color-data-4-text` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-fragile` | `--color-data-3-mark` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-fragile-bg` | `--color-data-3-bg` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-fragile-border` | `--color-data-3-border` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-fragile-text` | `--color-data-3-text` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-solid` | `--color-data-1-mark` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-solid-bg` | `--color-data-1-bg` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-solid-border` | `--color-data-1-border` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-level-solid-text` | `--color-data-1-text` | fusionné | Les niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-overlay` | `--color-overlay` | équivalent | Même rendu, mais l’ancienne valeur était un color-mix() : le SDK la calcule une fois (couleur résolue). Elle ne suit plus un changement de palette à l’exécution. |
 | `--color-primary` | `--color-brand-base` | renommé |  |
 | `--color-primary-dark` | `--color-brand-dark` | renommé |  |
 | `--color-primary-light` | `--color-brand-light` | renommé |  |
 | `--color-primary-mid` | `--color-brand-mid` | renommé |  |
 | `--color-primary-subtle` | `--color-brand-subtle` | renommé |  |
-| `--color-risk-critical` | `--color-data-4-mark` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-critical-bg` | `--color-data-4-bg` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-critical-border` | `--color-data-4-border` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-critical-text` | `--color-data-4-text` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-high` | `--color-data-3-mark` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-high-bg` | `--color-data-3-bg` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-high-border` | `--color-data-3-border` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-high-text` | `--color-data-3-text` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-low` | `--color-data-1-mark` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-low-bg` | `--color-data-1-bg` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-low-border` | `--color-data-1-border` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-low-text` | `--color-data-1-text` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-medium` | `--color-data-2-mark` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-medium-bg` | `--color-data-2-bg` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-medium-border` | `--color-data-2-border` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-risk-medium-text` | `--color-data-2-text` | fusionné | L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque. |
-| `--color-scrim` | `--color-scrim` | identique |  |
+| `--color-risk-critical` | `--color-data-4-mark` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 4). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-critical-bg` | `--color-data-4-bg` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 4). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-critical-border` | `--color-data-4-border` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 4). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-critical-text` | `--color-data-4-text` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 4). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-high` | `--color-data-3-mark` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 3). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-high-bg` | `--color-data-3-bg` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 3). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-high-border` | `--color-data-3-border` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 3). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-high-text` | `--color-data-3-text` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 3). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-low` | `--color-data-1-mark` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 1). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-low-bg` | `--color-data-1-bg` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 1). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-low-border` | `--color-data-1-border` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 1). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-low-text` | `--color-data-1-text` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 1). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-medium` | `--color-data-2-mark` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 2). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-medium-bg` | `--color-data-2-bg` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 2). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-medium-border` | `--color-data-2-border` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 2). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-risk-medium-text` | `--color-data-2-text` | fusionné | Échelle de risque à 4 niveaux → échelle de données, pour une marque à 4 paliers (palier 2). Dans une marque à 6 paliers, l’affectation dépend de la marque (voir « Risque et nombre de paliers »). Palier 1 = le plus favorable. Le libellé est celui du composant ou de la marque (brand.json › tierLabels). |
+| `--color-scrim` | `--color-scrim` | équivalent | Même rendu, mais l’ancienne valeur était un color-mix() : le SDK la calcule une fois (couleur résolue). Elle ne suit plus un changement de palette à l’exécution. |
 | `--color-sidebar-active` | `--color-sidebar-active` | identique |  |
 | `--color-sidebar-bg` | `--color-sidebar-bg` | identique |  |
 | `--color-sidebar-divider` | `--color-sidebar-divider` | identique |  |
@@ -196,9 +209,9 @@ Règles de nommage : une couche par préfixe. Valeurs : `--palette-*`, `--font-*
 | `--radius-xl` | `--radius-xl` | identique |  |
 | `--row-double` | `--row-double` | identique |  |
 | `--row-single` | `--row-single` | identique |  |
-| `--shadow-1` | `--shadow-1` | identique |  |
-| `--shadow-2` | `--shadow-2` | identique |  |
-| `--shadow-3` | `--shadow-3` | identique |  |
+| `--shadow-1` | `--shadow-1` | équivalent | Même rendu, mais l’ancienne valeur était un color-mix() : le SDK la calcule une fois (couleur résolue). Elle ne suit plus un changement de palette à l’exécution. |
+| `--shadow-2` | `--shadow-2` | équivalent | Même rendu, mais l’ancienne valeur était un color-mix() : le SDK la calcule une fois (couleur résolue). Elle ne suit plus un changement de palette à l’exécution. |
+| `--shadow-3` | `--shadow-3` | équivalent | Même rendu, mais l’ancienne valeur était un color-mix() : le SDK la calcule une fois (couleur résolue). Elle ne suit plus un changement de palette à l’exécution. |
 | `--space-0` | `--space-0` | identique |  |
 | `--space-1` | `--space-1` | identique |  |
 | `--space-10` | `--space-10` | identique |  |
@@ -258,7 +271,7 @@ Règles de nommage : une couche par préfixe. Valeurs : `--palette-*`, `--font-*
 ## Jetons nouveaux (sans équivalent dans tokens.css d'origine)
 
 - Échelle de données : `--data-count`, `--data-threshold-1…5` (nombre de paliers et seuils, fixés par la marque).
-- Rôles : `--color-text-link`, `--color-border-inverse`, `--color-bg-inverse-raised`, `--color-series-1…6` (séries de graphique), `--color-data-4…6-*` (paliers 5 et 6 de l'échelle).
+- Rôles : `--color-text-link`, `--color-border-inverse`, `--color-bg-inverse-raised`, `--color-series-1…6` (séries de graphique), `--color-data-5…6-*` (paliers 5 et 6 de l'échelle).
 - Polices : `--font-figure` (chiffres, tabulaires), `--font-code`.
 - Points de rupture : `--breakpoint-sm|md|lg|xl` (étaient des littéraux de `theme.css`).
 - Couche des composants : tout le vocabulaire shadcn/ui (`--background`, `--primary`…, ancien `bridge.css`) et les jetons `--button-*`, `--input-*`, `--card-*`, `--badge-*`.
