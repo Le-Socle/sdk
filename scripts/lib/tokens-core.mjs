@@ -188,6 +188,12 @@ function declarations(ids, tokens, byId, indent = '  ') {
     }
     const note = t.$description ? ` /* ${t.$description.replace(/\*\//g, '* /')} */` : '';
     lines.push(`${indent}${cssName(t)}: ${cssValue(t, byId)};${note}`);
+    // Abrégé `font` d'un rôle typographique, dérivé de ses quatre jetons (graisse, taille, interligne, famille).
+    const m = /^role\.type\.([^.]+)\.family$/.exec(id);
+    if (m) {
+      const r = m[1];
+      lines.push(`${indent}--type-${r}: var(--type-${r}-weight) var(--type-${r}-size)/var(--type-${r}-leading) var(--type-${r}-family); /* Abrégé \`font\` du rôle « ${r} », dérivé des quatre jetons. */`);
+    }
   }
   return lines;
 }
@@ -262,13 +268,13 @@ export function emitCss({ resolver, brand }) {
   if (!brand) {
     parts.push(HEADER(`Variables CSS du SDK, marque neutre. Thème clair par défaut ; sombre : [data-theme="dark"] ;
    sections sombres : [data-surface="dark" | "darker"] ; densité : [data-density="comfortable"].`));
-    const ids = Object.keys(neutral).filter((id) => !SKIP_CSS(id) && !id.startsWith('role.breakpoint.'));
+    const ids = Object.keys(neutral).filter((id) => !SKIP_CSS(id));
     parts.push(block(':root', ['  color-scheme: light;', ...declarations(ids, neutral, neutral)]));
   } else {
     const comment = `Marque « ${brand} » : ne contient que ce que la marque change par rapport au thème neutre.`;
     parts.push(HEADER(`${comment}\n   À charger APRÈS tokens.css du SDK.`));
     const t0 = R({ brand });
-    const rootIds = changed(neutral, t0, t0).filter((id) => !id.startsWith('role.breakpoint.'));
+    const rootIds = changed(neutral, t0, t0);
     parts.push(block(':root', declarations(rootIds, t0, t0), comment));
     const dN = R({ mode: 'dark' });
     const dB = R({ brand, mode: 'dark' });
@@ -386,7 +392,7 @@ export function emitTheme({ resolver }) {
   const typeRoles = [...new Set(all.filter((x) => x.id.startsWith('role.type.')).map((x) => x.id.split('.')[2]))];
   const util = typeRoles.map((r) => {
     const get = (p) => t[`role.type.${r}.${p}`];
-    const body = [`  font: var(--type-${r}-weight) var(--type-${r}-size)/var(--type-${r}-leading) var(--type-${r}-family);`];
+    const body = [`  font: var(--type-${r});`];
     if (get('tracking')) body.push(`  letter-spacing: var(--type-${r}-tracking);`);
     if (get('caps')) body.push('  text-transform: uppercase;');
     if (get('tabular')) body.push('  font-variant-numeric: var(--numeric-tabular);');

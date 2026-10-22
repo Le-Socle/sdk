@@ -37,7 +37,7 @@ export function emitFontsCss({ families }, { urlPrefix }) {
   const out = [`/* ============================================================================
    GÉNÉRÉ par scripts/build-tokens.mjs depuis le manifeste de polices. Ne pas éditer.
    Polices auto-hébergées : les fichiers sont servis par l'application, aucun appel
-   à un service tiers (fonts.googleapis.com compris).
+   à un service de polices tiers.
    ============================================================================ */\n`];
   for (const fam of families) {
     out.push(`/* ${fam.family} · licence ${fam.license.name} (${fam.license.file}) */`);

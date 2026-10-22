@@ -84,7 +84,7 @@
     "prepare": "npm run build:lib",
     "typecheck": "npm run tokens && tsc --noEmit -p .",
     "lint": "oxlint src stories scripts brands .storybook",
-    "test": "node --test --test-concurrency=1 tests/",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
     "check:tokens": "node scripts/check-tokens.mjs",
     "check:hardcoded": "node scripts/check-hardcoded.mjs",
     "check:brands": "node scripts/check-brands.mjs",

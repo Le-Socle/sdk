@@ -1,0 +1,1481 @@
+{
+ "source": "apoleos-design-system tokens/tokens.css, branche main (0.4.0 + landing v3)",
+ "rows": [
+  {
+   "ancien": "--border-width-thick",
+   "nouveau": "--border-width-thick",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--border-width-thin",
+   "nouveau": "--border-width-thin",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-accent",
+   "nouveau": "--color-accent-base",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-accent-ink",
+   "nouveau": "--color-accent-ink",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-accent-secondary",
+   "nouveau": "--color-accent-secondary",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-accent-subtle",
+   "nouveau": "--color-accent-subtle",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-action",
+   "nouveau": "--color-action-base",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-action-hover",
+   "nouveau": "--color-action-hover",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-action-inverse",
+   "nouveau": "--color-action-inverse",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-action-inverse-hover",
+   "nouveau": "--color-action-inverse-hover",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-action-inverse-text",
+   "nouveau": "--color-action-inverse-text",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-action-text",
+   "nouveau": "--color-action-text",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-bg",
+   "nouveau": "--color-bg-page",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-bg-dark",
+   "nouveau": "--color-bg-inverse",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-bg-darker",
+   "nouveau": "--color-bg-inverse-deep",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-bg-raised",
+   "nouveau": "--color-bg-raised",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-bg-surface",
+   "nouveau": "--color-bg-surface",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-border",
+   "nouveau": "--color-border-base",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-border-strong",
+   "nouveau": "--color-border-strong",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-border-subtle",
+   "nouveau": "--color-border-subtle",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-error",
+   "nouveau": "--color-status-error",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-error-bg",
+   "nouveau": "--color-status-error-bg",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-error-border",
+   "nouveau": "--color-status-error-border",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-error-text",
+   "nouveau": "--color-status-error-text",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-field-blush",
+   "nouveau": "--color-field-accent-soft",
+   "statut": "renommé",
+   "note": "Aplat de tuile de profil : le nom de couleur de marque devient un rôle."
+  },
+  {
+   "ancien": "--color-field-blush-line",
+   "nouveau": "--color-field-accent-soft-line",
+   "statut": "renommé",
+   "note": "Aplat de tuile de profil : le nom de couleur de marque devient un rôle."
+  },
+  {
+   "ancien": "--color-field-cherry",
+   "nouveau": "--color-field-accent",
+   "statut": "renommé",
+   "note": "Aplat de tuile de profil : le nom de couleur de marque devient un rôle."
+  },
+  {
+   "ancien": "--color-field-cherry-line",
+   "nouveau": "--color-field-accent-line",
+   "statut": "renommé",
+   "note": "Aplat de tuile de profil : le nom de couleur de marque devient un rôle."
+  },
+  {
+   "ancien": "--color-field-prusse",
+   "nouveau": "--color-field-strong",
+   "statut": "renommé",
+   "note": "Aplat de tuile de profil : le nom de couleur de marque devient un rôle."
+  },
+  {
+   "ancien": "--color-field-prusse-line",
+   "nouveau": "--color-field-strong-line",
+   "statut": "renommé",
+   "note": "Aplat de tuile de profil : le nom de couleur de marque devient un rôle."
+  },
+  {
+   "ancien": "--color-field-sky",
+   "nouveau": "--color-field-soft",
+   "statut": "renommé",
+   "note": "Aplat de tuile de profil : le nom de couleur de marque devient un rôle."
+  },
+  {
+   "ancien": "--color-field-sky-line",
+   "nouveau": "--color-field-soft-line",
+   "statut": "renommé",
+   "note": "Aplat de tuile de profil : le nom de couleur de marque devient un rôle."
+  },
+  {
+   "ancien": "--color-focus",
+   "nouveau": "--color-focus-base",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-focus-inverse",
+   "nouveau": "--color-focus-inverse",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-info",
+   "nouveau": "--color-status-info",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-info-bg",
+   "nouveau": "--color-status-info-bg",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-info-border",
+   "nouveau": "--color-status-info-border",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-info-text",
+   "nouveau": "--color-status-info-text",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-level-correct",
+   "nouveau": "--color-data-2-mark",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-correct-bg",
+   "nouveau": "--color-data-2-bg",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-correct-border",
+   "nouveau": "--color-data-2-border",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-correct-text",
+   "nouveau": "--color-data-2-text",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-critical",
+   "nouveau": "--color-data-4-mark",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-critical-bg",
+   "nouveau": "--color-data-4-bg",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-critical-border",
+   "nouveau": "--color-data-4-border",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-critical-text",
+   "nouveau": "--color-data-4-text",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-fragile",
+   "nouveau": "--color-data-3-mark",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-fragile-bg",
+   "nouveau": "--color-data-3-bg",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-fragile-border",
+   "nouveau": "--color-data-3-border",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-fragile-text",
+   "nouveau": "--color-data-3-text",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-solid",
+   "nouveau": "--color-data-1-mark",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-solid-bg",
+   "nouveau": "--color-data-1-bg",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-solid-border",
+   "nouveau": "--color-data-1-border",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-level-solid-text",
+   "nouveau": "--color-data-1-text",
+   "statut": "fusionné",
+   "note": "L'niveaux de performance et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-overlay",
+   "nouveau": "--color-overlay",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-primary",
+   "nouveau": "--color-brand-base",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-primary-dark",
+   "nouveau": "--color-brand-dark",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-primary-light",
+   "nouveau": "--color-brand-light",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-primary-mid",
+   "nouveau": "--color-brand-mid",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-primary-subtle",
+   "nouveau": "--color-brand-subtle",
+   "statut": "renommé",
+   "note": ""
+  },
+  {
+   "ancien": "--color-risk-critical",
+   "nouveau": "--color-data-4-mark",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-critical-bg",
+   "nouveau": "--color-data-4-bg",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-critical-border",
+   "nouveau": "--color-data-4-border",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-critical-text",
+   "nouveau": "--color-data-4-text",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 4) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-high",
+   "nouveau": "--color-data-3-mark",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-high-bg",
+   "nouveau": "--color-data-3-bg",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-high-border",
+   "nouveau": "--color-data-3-border",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-high-text",
+   "nouveau": "--color-data-3-text",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 3) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-low",
+   "nouveau": "--color-data-1-mark",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-low-bg",
+   "nouveau": "--color-data-1-bg",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-low-border",
+   "nouveau": "--color-data-1-border",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-low-text",
+   "nouveau": "--color-data-1-text",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 1) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-medium",
+   "nouveau": "--color-data-2-mark",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-medium-bg",
+   "nouveau": "--color-data-2-bg",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-medium-border",
+   "nouveau": "--color-data-2-border",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-risk-medium-text",
+   "nouveau": "--color-data-2-text",
+   "statut": "fusionné",
+   "note": "L'échelle de risque et ses alias deviennent l'échelle de données à paliers (palier 2) ; le palier 1 est le plus favorable. Le libellé du palier est celui du composant ou de la marque."
+  },
+  {
+   "ancien": "--color-scrim",
+   "nouveau": "--color-scrim",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-sidebar-active",
+   "nouveau": "--color-sidebar-active",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-sidebar-bg",
+   "nouveau": "--color-sidebar-bg",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-sidebar-divider",
+   "nouveau": "--color-sidebar-divider",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-sidebar-focus",
+   "nouveau": "--color-sidebar-focus",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-sidebar-hover",
+   "nouveau": "--color-sidebar-hover",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-sidebar-text",
+   "nouveau": "--color-sidebar-text",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-sidebar-text-dim",
+   "nouveau": "--color-sidebar-text-dim",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-success",
+   "nouveau": "--color-status-success",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-success-bg",
+   "nouveau": "--color-status-success-bg",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-success-border",
+   "nouveau": "--color-status-success-border",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-success-text",
+   "nouveau": "--color-status-success-text",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-text-heading",
+   "nouveau": "--color-text-heading",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-text-inverse",
+   "nouveau": "--color-text-inverse",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-text-inverse-dim",
+   "nouveau": "--color-text-inverse-dim",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-text-primary",
+   "nouveau": "--color-text-primary",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-text-secondary",
+   "nouveau": "--color-text-secondary",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-text-tertiary",
+   "nouveau": "--color-text-tertiary",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--color-warning",
+   "nouveau": "--color-status-warning",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-warning-bg",
+   "nouveau": "--color-status-warning-bg",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-warning-border",
+   "nouveau": "--color-status-warning-border",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--color-warning-text",
+   "nouveau": "--color-status-warning-text",
+   "statut": "renommé",
+   "note": "Statuts : alias d'état, rangés sous status."
+  },
+  {
+   "ancien": "--container-page",
+   "nouveau": "--container-page",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--container-prose",
+   "nouveau": "--container-prose",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--control-lg",
+   "nouveau": "--control-lg",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--control-md",
+   "nouveau": "--control-md",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--control-sm",
+   "nouveau": "--control-sm",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--control-touch",
+   "nouveau": "--control-touch",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--duration-fast",
+   "nouveau": "--duration-fast",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--duration-micro",
+   "nouveau": "--duration-micro",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--duration-normal",
+   "nouveau": "--duration-normal",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--duration-slow",
+   "nouveau": "--duration-slow",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--duration-slower",
+   "nouveau": "--duration-slower",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--ease-in",
+   "nouveau": "--ease-in",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--ease-in-out",
+   "nouveau": "--ease-in-out",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--ease-out",
+   "nouveau": "--ease-out",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--focus-ring-offset",
+   "nouveau": "--focus-ring-offset",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--focus-ring-width",
+   "nouveau": "--focus-ring-width",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--font-headline",
+   "nouveau": "--font-heading",
+   "statut": "renommé",
+   "note": "Famille des titres."
+  },
+  {
+   "ancien": "--font-text",
+   "nouveau": "--font-text",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--layer-dialog",
+   "nouveau": "--layer-dialog",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--layer-menu",
+   "nouveau": "--layer-menu",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--layer-sheet",
+   "nouveau": "--layer-sheet",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--layer-sticky",
+   "nouveau": "--layer-sticky",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--layer-toast",
+   "nouveau": "--layer-toast",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--layer-tooltip",
+   "nouveau": "--layer-tooltip",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--leading-heading",
+   "nouveau": "--leading-heading",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--leading-none",
+   "nouveau": "--leading-none",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--leading-normal",
+   "nouveau": "--leading-normal",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--leading-relaxed",
+   "nouveau": "--leading-relaxed",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--leading-snug",
+   "nouveau": "--leading-snug",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--leading-tight",
+   "nouveau": "--leading-tight",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--numeric-tabular",
+   "nouveau": "--numeric-tabular",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--palette-amber-100",
+   "nouveau": "--palette-amber-100",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-amber-300",
+   "nouveau": "--palette-amber-300",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-amber-500",
+   "nouveau": "--palette-amber-500",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-amber-700",
+   "nouveau": "--palette-amber-700",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-blue-100",
+   "nouveau": "--palette-primary-100",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-200",
+   "nouveau": "--palette-primary-200",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-300",
+   "nouveau": "--palette-primary-300",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-400",
+   "nouveau": "--palette-primary-400",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-50",
+   "nouveau": "--palette-primary-50",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-500",
+   "nouveau": "--palette-primary-500",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-600",
+   "nouveau": "--palette-primary-600",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-700",
+   "nouveau": "--palette-primary-700",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-800",
+   "nouveau": "--palette-primary-800",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-900",
+   "nouveau": "--palette-primary-900",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-blue-950",
+   "nouveau": "--palette-primary-950",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-cherry-100",
+   "nouveau": "--palette-accent-100",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-cherry-200",
+   "nouveau": "--palette-accent-200",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-cherry-300",
+   "nouveau": "--palette-accent-300",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-cherry-400",
+   "nouveau": "--palette-accent-400",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-cherry-50",
+   "nouveau": "--palette-accent-50",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-cherry-600",
+   "nouveau": "--palette-accent-600",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-cherry-700",
+   "nouveau": "--palette-accent-700",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-cherry-800",
+   "nouveau": "--palette-accent-800",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-green-100",
+   "nouveau": "--palette-green-100",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-green-300",
+   "nouveau": "--palette-green-300",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-green-500",
+   "nouveau": "--palette-green-500",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-green-700",
+   "nouveau": "--palette-green-700",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-orange-100",
+   "nouveau": "--palette-orange-100",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-orange-300",
+   "nouveau": "--palette-orange-300",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-orange-500",
+   "nouveau": "--palette-orange-500",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-orange-700",
+   "nouveau": "--palette-orange-700",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-red-100",
+   "nouveau": "--palette-red-100",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-red-300",
+   "nouveau": "--palette-red-300",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-red-500",
+   "nouveau": "--palette-red-500",
+   "statut": "identique",
+   "note": "Teinte générique de l'échelle d'états ; valeur propre à la marque."
+  },
+  {
+   "ancien": "--palette-slate-100",
+   "nouveau": "--palette-neutral-100",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-slate-150",
+   "nouveau": "--palette-neutral-150",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-slate-200",
+   "nouveau": "--palette-neutral-200",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-slate-300",
+   "nouveau": "--palette-neutral-300",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-slate-400",
+   "nouveau": "--palette-neutral-400",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-slate-50",
+   "nouveau": "--palette-neutral-50",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-slate-500",
+   "nouveau": "--palette-neutral-500",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-slate-550",
+   "nouveau": "--palette-neutral-550",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-slate-600",
+   "nouveau": "--palette-neutral-600",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-slate-700",
+   "nouveau": "--palette-neutral-700",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-walnut-600",
+   "nouveau": "--palette-secondary-600",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-walnut-700",
+   "nouveau": "--palette-secondary-700",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-walnut-800",
+   "nouveau": "--palette-secondary-800",
+   "statut": "renommé",
+   "note": "Le nom de teinte de marque devient un rôle générique ; la valeur est celle de la marque."
+  },
+  {
+   "ancien": "--palette-white",
+   "nouveau": "--palette-white",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--radius-detail",
+   "nouveau": "--radius-detail",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--radius-dot",
+   "nouveau": "--radius-dot",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--radius-frame-round",
+   "nouveau": null,
+   "statut": "hors SDK",
+   "note": "Rayon propre à la politique de formes de la landing ; reste dans le dépôt de la marque ou de la page qui s'en sert."
+  },
+  {
+   "ancien": "--radius-lg",
+   "nouveau": "--radius-lg",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--radius-mark",
+   "nouveau": "--radius-mark",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--radius-md",
+   "nouveau": "--radius-md",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--radius-screen-round",
+   "nouveau": null,
+   "statut": "hors SDK",
+   "note": "Rayon propre à la politique de formes de la landing ; reste dans le dépôt de la marque ou de la page qui s'en sert."
+  },
+  {
+   "ancien": "--radius-sm",
+   "nouveau": "--radius-sm",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--radius-xl",
+   "nouveau": "--radius-xl",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--row-double",
+   "nouveau": "--row-double",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--row-single",
+   "nouveau": "--row-single",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--shadow-1",
+   "nouveau": "--shadow-1",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--shadow-2",
+   "nouveau": "--shadow-2",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--shadow-3",
+   "nouveau": "--shadow-3",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-0",
+   "nouveau": "--space-0",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-1",
+   "nouveau": "--space-1",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-10",
+   "nouveau": "--space-10",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-12",
+   "nouveau": "--space-12",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-16",
+   "nouveau": "--space-16",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-2",
+   "nouveau": "--space-2",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-20",
+   "nouveau": "--space-20",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-24",
+   "nouveau": "--space-24",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-3",
+   "nouveau": "--space-3",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-32",
+   "nouveau": "--space-32",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-4",
+   "nouveau": "--space-4",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-5",
+   "nouveau": "--space-5",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-6",
+   "nouveau": "--space-6",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-8",
+   "nouveau": "--space-8",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--space-slide-margin",
+   "nouveau": "--space-slide-margin",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--stagger",
+   "nouveau": "--stagger",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--text-2xl",
+   "nouveau": "--text-2xl",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--text-2xs",
+   "nouveau": "--text-2xs",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--text-base",
+   "nouveau": "--text-base",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--text-caption",
+   "nouveau": "--text-caption",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--text-display",
+   "nouveau": "--text-display",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--text-lg",
+   "nouveau": "--text-lg",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--text-sm",
+   "nouveau": "--text-sm",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--text-xl",
+   "nouveau": "--text-xl",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--text-xs",
+   "nouveau": "--text-xs",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--tracking-caps",
+   "nouveau": "--tracking-caps",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--tracking-caps-wide",
+   "nouveau": "--tracking-caps-wide",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--tracking-heading",
+   "nouveau": "--tracking-heading",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--tracking-normal",
+   "nouveau": "--tracking-normal",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--tracking-snug",
+   "nouveau": "--tracking-snug",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--tracking-tight",
+   "nouveau": "--tracking-tight",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--type-body",
+   "nouveau": "--type-body",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-body-sm",
+   "nouveau": "--type-body-sm",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-caption",
+   "nouveau": "--type-caption",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-display",
+   "nouveau": "--type-display",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-display-tracking",
+   "nouveau": "--type-display-tracking",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-figure",
+   "nouveau": "--type-figure",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-figure-sm",
+   "nouveau": "--type-figure-sm",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-heading",
+   "nouveau": "--type-heading",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-label",
+   "nouveau": "--type-label",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-label-caps",
+   "nouveau": "--type-label-caps",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-label-caps-tracking",
+   "nouveau": "--type-label-caps-tracking",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-label-lg",
+   "nouveau": "--type-label-lg",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-label-sm",
+   "nouveau": "--type-label-sm",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-lede",
+   "nouveau": "--type-lede",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-overline",
+   "nouveau": "--type-overline",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-overline-tracking",
+   "nouveau": "--type-overline-tracking",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-subtitle",
+   "nouveau": "--type-subtitle",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-subtitle-tracking",
+   "nouveau": "--type-subtitle-tracking",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-title",
+   "nouveau": "--type-title",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--type-title-tracking",
+   "nouveau": "--type-title-tracking",
+   "statut": "identique",
+   "note": "Les rôles typographiques gardent leur nom ; chacun gagne quatre jetons (-weight, -size, -leading, -family) dont l'abrégé `font` est dérivé."
+  },
+  {
+   "ancien": "--weight-light",
+   "nouveau": "--weight-light",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--weight-medium",
+   "nouveau": "--weight-medium",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--weight-regular",
+   "nouveau": "--weight-regular",
+   "statut": "identique",
+   "note": ""
+  },
+  {
+   "ancien": "--weight-semibold",
+   "nouveau": "--weight-semibold",
+   "statut": "identique",
+   "note": ""
+  }
+ ]
+}

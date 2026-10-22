@@ -22,6 +22,16 @@
           "$type": "number",
           "$value": 75,
           "$description": "Borne entre le palier 3 et le palier 4, sur une échelle de 0 à 100."
+        },
+        "4": {
+          "$type": "number",
+          "$value": 88,
+          "$description": "Borne entre le palier 4 et le palier 5, sur une échelle de 0 à 100 (inutilisée si l'échelle a moins de paliers)."
+        },
+        "5": {
+          "$type": "number",
+          "$value": 94,
+          "$description": "Borne entre le palier 5 et le palier 6, sur une échelle de 0 à 100 (inutilisée si l'échelle a moins de paliers)."
         }
       }
     },
