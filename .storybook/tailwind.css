@@ -8,5 +8,6 @@
 @import "../generated/css/theme.css";
 
 @source "../src/ui";
+@source "../src/app";
 
 @source "../stories";

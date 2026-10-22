@@ -27,6 +27,7 @@ export default defineConfig({
         index: here('./src/index.ts'),
         ...Object.fromEntries(supports.map((s) => [`${s}/index`, here(`./src/${s}/index.ts`)])),
         'brands/demo/index': here('./src/brands/demo/index.ts'),
+        'app/demo/index': here('./src/app/demo/index.ts'),
       },
       formats: ['es'],
     },

@@ -1,6 +1,6 @@
 {
   "name": "@le-socle/sdk",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "SDK du Socle : jetons, composants, archétypes et rendu pour toutes les surfaces d'une société. Aucune marque dedans : chaque société branche la sienne.",
   "private": false,
   "license": "UNLICENSED",
@@ -34,6 +34,10 @@
     "./app": {
       "types": "./dist/app/index.d.ts",
       "default": "./dist/app/index.js"
+    },
+    "./app/demo": {
+      "types": "./dist/app/demo/index.d.ts",
+      "default": "./dist/app/demo/index.js"
     },
     "./site": {
       "types": "./dist/site/index.d.ts",
