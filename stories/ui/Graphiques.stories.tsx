@@ -98,7 +98,7 @@ export const DansUnePage: Story = {
           />
         </Cadre>
         <Cadre title="Trajectoire du score">
-          <LineChart data={TRAJECTOIRE} categoryKey="mesure" series={[{ key: 'score', label: 'Score' }]} domain={[0, 100]} showValues summary="Le score passe de 31 à M1 à 79 à M12." />
+          <LineChart data={TRAJECTOIRE} categoryKey="mesure" series={[{ key: 'score', label: 'Score' }]} domain={[0, 100]} showValues reference={50} target={75} summary="Le score passe de 31 à M1 à 79 à M12 ; référence 50, cible 75." />
         </Cadre>
         <Cadre title="Répartition des domaines par palier">
           <div className="flex flex-col gap-6 p-1">
@@ -113,17 +113,18 @@ export const DansUnePage: Story = {
         </Cadre>
         <Cadre title="Indicateurs">
           <div className="flex flex-wrap items-end gap-8 p-1">
-            <Arc label="Maturité globale" value={72} tiered higherIsBetter />
+            <Arc label="Maturité globale" value={72} tiered higherIsBetter reference={60} target={80} />
             <div className="flex min-w-48 flex-1 flex-col gap-4"><Gauge label="Sécurité" value={64} higherIsBetter className="max-w-64" /></div>
             <div className="flex w-full flex-col gap-3">
-              <ProgressBar value={82} tiered higherIsBetter aria-label="Gouvernance" />
-              <ProgressBar value={47} tiered higherIsBetter aria-label="Données" />
+              <ProgressBar value={82} tiered higherIsBetter reference={70} target={90} aria-label="Gouvernance" />
+              <ProgressBar value={47} tiered higherIsBetter reference={40} target={60} aria-label="Données" />
               <ProgressBar value={null} aria-label="Fournisseurs non évalués" />
             </div>
           </div>
         </Cadre>
         <Cadre title="Matrice des mesures">
           <HeatMatrix caption="Maturité par actif et par fonction" higherIsBetter {...MATRICE} />
+          <HeatMatrix caption="Maturité sur 5 par fonction" higherIsBetter domain={[0, 5]} columns={['Prévenir', 'Détecter', 'Réagir']} rows={[{ label: 'Postes', values: [4.1, 3.2, 2.75] }, { label: 'Serveurs', values: [1.4, 3.6, null] }]} />
         </Cadre>
         <Cadre title="Budgets des projets" className="md:col-span-2">
           <FiguresTable caption="Budgets et avancement des projets" {...TABLEAU} />

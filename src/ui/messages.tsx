@@ -55,6 +55,9 @@ export type Messages = {
   chartTable: string;
   chartValue: string;
   chartCategory: string;
+  /** Repère de référence (valeur précédente, moyenne…) et cible d'un graphique : lus avec la valeur. */
+  chartReference: string;
+  chartTarget: string;
 };
 
 export const messagesFr: Messages = {
@@ -89,6 +92,8 @@ export const messagesFr: Messages = {
   chartTable: 'Données du graphique',
   chartValue: 'Valeur',
   chartCategory: 'Catégorie',
+  chartReference: 'Référence',
+  chartTarget: 'Cible',
 };
 
 /**

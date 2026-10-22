@@ -8,7 +8,7 @@ import { pathToFileURL } from 'node:url';
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..');
 
-export async function loadTs(relative) {
+export async function loadTs(relative, { bundleAll = false } = {}) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'sdk-ts-'));
   const outfile = path.join(dir, 'module.mjs');
   await build({
@@ -18,7 +18,9 @@ export async function loadTs(relative) {
     format: 'esm',
     platform: 'node',
     logLevel: 'silent',
-    external: ['react', 'react-dom', 'lucide-react', 'radix-ui', 'class-variance-authority', 'clsx', 'tailwind-merge', 'cmdk', 'sonner', 'recharts'],
+    // `bundleAll` : tout embarqué (React compris), pour rendre un composant en HTML depuis un test.
+    ...(bundleAll ? { banner: { js: "import { createRequire as __cr } from 'node:module'; const require = __cr(import.meta.url);" } } : {}),
+    external: bundleAll ? [] : ['react', 'react-dom', 'lucide-react', 'radix-ui', 'class-variance-authority', 'clsx', 'tailwind-merge', 'cmdk', 'sonner', 'recharts'],
   });
   return import(pathToFileURL(outfile).href);
 }

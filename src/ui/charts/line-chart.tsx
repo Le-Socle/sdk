@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CartesianGrid, Line, LineChart as RLineChart, Tooltip, XAxis, YAxis } from "recharts"
+import { CartesianGrid, Line, LineChart as RLineChart, ReferenceLine, Tooltip, XAxis, YAxis } from "recharts"
 
 import { useMessages } from "../messages"
 import { ChartArea, ChartFrame, ChartLegend, ChartTooltipBox, type ChartSize, type LegendItem } from "./chart"
@@ -39,13 +39,17 @@ type Props = Omit<React.ComponentProps<"figure">, "title"> & {
   formatValue?: (v: number) => string
   /** Affiche la valeur au-dessus de chaque point (série unique). */
   showValues?: boolean
+  /** Ligne de référence (valeur précédente, moyenne…) : pointillés, dans l'unité de l'axe. */
+  reference?: number
+  /** Ligne de cible : trait plein, dans l'unité de l'axe. */
+  target?: number
   /** Largeur de l'axe vertical (px), à élargir pour des valeurs longues. */
   yAxisWidth?: number
   /** Hauteur de la zone de tracé. */
   areaClassName?: string
 }
 
-function LineChart({ title, data, categoryKey, series, summary, size = "md", domain, formatValue, showValues = false, yAxisWidth, areaClassName, ...props }: Props) {
+function LineChart({ title, data, categoryKey, series, summary, size = "md", domain, formatValue, showValues = false, reference, target, yAxisWidth, areaClassName, ...props }: Props) {
   const messages = useMessages()
   const fmt = formatValue ?? ((v: number) => formatNumber(v, messages.locale))
   const marker = size === "lg" ? 12 : 8
@@ -66,6 +70,12 @@ function LineChart({ title, data, categoryKey, series, summary, size = "md", dom
               ) : null
             }
           />
+          {reference === undefined ? null : (
+            <ReferenceLine y={reference} ifOverflow="extendDomain" className="stroke-chart-axis" strokeDasharray="4 4" strokeWidth={1.5} label={{ value: `${messages.chartReference} ${fmt(reference)}`, position: "insideBottomRight", className: "type-caption fill-chart-axis tabular-nums" }} />
+          )}
+          {target === undefined ? null : (
+            <ReferenceLine y={target} ifOverflow="extendDomain" className="stroke-chart-label" strokeWidth={2} label={{ value: `${messages.chartTarget} ${fmt(target)}`, position: "insideTopRight", className: "type-caption fill-chart-label tabular-nums" }} />
+          )}
           {series.map((s, i) => {
             const color = seriesVar(i + 1)
             const shape = SHAPES[i % SHAPES.length] as string

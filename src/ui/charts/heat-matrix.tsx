@@ -12,7 +12,7 @@ import { TIER_CLASSES } from "./status-pill"
 
 /**
  * Matrice : des lignes, des colonnes, une cellule par croisement, colorée par palier de l'échelle
- * de données (valeurs de 0 à 100). Chaque cellule écrit sa valeur : la couleur ne porte jamais seule
+ * de données (valeurs de 0 à 100, ou dans le domaine donné). Chaque cellule écrit sa valeur : la couleur ne porte jamais seule
  * le sens. Un tableau HTML : lecteurs d'écran et clavier s'y retrouvent.
  */
 type Cell = number | null
@@ -22,13 +22,17 @@ type HeatMatrixProps = Omit<React.ComponentProps<"table">, "children"> & {
   rows: { label: string; values: Cell[] }[]
   higherIsBetter?: boolean
   scale?: DataScale
+  /** Domaine des valeurs (min, max) ; 0 à 100 par défaut. La couleur suit la position dans le domaine. */
+  domain?: [number, number]
   formatValue?: (v: number) => string
   size?: "md" | "lg"
 }
 
-function HeatMatrix({ caption, columns, rows, higherIsBetter = false, scale: scaleProp, formatValue, size = "md", className, ...props }: HeatMatrixProps) {
+function HeatMatrix({ caption, columns, rows, higherIsBetter = false, scale: scaleProp, domain, formatValue, size = "md", className, ...props }: HeatMatrixProps) {
   const scale = useDataScale(scaleProp)
   const messages = useMessages()
+  const [min, max] = domain ?? [0, 100]
+  const toPercent = (v: number) => (max === min ? 0 : ((v - min) / (max - min)) * 100)
   const fmt = formatValue ?? ((v: number) => formatNumber(v, messages.locale))
   return (
     <ScrollRegion label={caption} data-slot="heat-matrix" data-size={size}>
@@ -47,7 +51,7 @@ function HeatMatrix({ caption, columns, rows, higherIsBetter = false, scale: sca
             <tr key={r.label}>
               <th scope="row" className="type-label pr-2 text-left text-chart-label">{r.label}</th>
               {r.values.map((v, i) => {
-                const tier = v === null ? null : tierOf(v, scale, higherIsBetter)
+                const tier = v === null ? null : tierOf(toPercent(v), scale, higherIsBetter)
                 return (
                   <td
                     key={i}
