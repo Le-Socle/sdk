@@ -35,6 +35,12 @@ import brand from '@ma-societe/marque';
 raw(brand, 'role.color.action.base');   // "#…" pour la marque
 raw(neutral, 'role.color.action.base'); // "#…" pour le neutre`}</code></pre>
       </Section>
+      <Section title="Générer la feuille depuis votre dépôt">
+        <p>Une marque n’a pas besoin d’une copie du dépôt du SDK : le paquet installé contient la chaîne de génération, la source de jetons et les polices du neutre. Depuis le dossier de la marque (celui de <code>brand.json</code>) :</p>
+        <pre className="doc__card"><code>{`npm install @le-socle/sdk
+npx socle-brand build . --out generated-brand`}</code></pre>
+        <p>La commande écrit <code>brands/&lt;id&gt;/brand.css</code>, <code>fonts.css</code> et les polices, <code>ts/&lt;id&gt;.ts</code> (valeurs brutes) et <code>dtcg/&lt;id&gt;.light.json</code> et <code>.dark.json</code>. Elle échoue avec un message clair si un fichier de police ou une licence manque.</p>
+      </Section>
       <Section title="Ce que la marque change">
         <Table
           head={['Je veux changer', 'Je modifie dans tokens.json']}

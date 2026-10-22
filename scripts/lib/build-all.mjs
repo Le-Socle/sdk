@@ -28,7 +28,8 @@ export function listBrands(brandsDir) {
 /** @param {{ tokensDir: string, brandsDir: string, fontsDir: string, genDir: string, typesImport?: string, log?: (m: string) => void }} o */
 export async function buildAll(o) {
   const log = o.log ?? (() => {});
-  const brands = listBrands(o.brandsDir);
+  // `o.brands` : liste explicite { id, dir, manifest } (marque hors du dépôt, `socle-brand build`).
+  const brands = o.brands ?? listBrands(o.brandsDir);
   const brandFiles = Object.fromEntries(brands.map((b) => [b.id, path.join(b.dir, b.manifest.tokens ?? 'tokens.json')]));
   const { resolver } = await loadSystem({ tokensDir: o.tokensDir, brands: brandFiles });
   const summary = { brands: brands.map((b) => b.id), files: [] };
