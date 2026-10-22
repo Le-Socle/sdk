@@ -404,7 +404,9 @@ export function emitTheme({ resolver }) {
     const body = [`  font: var(--type-${r});`];
     if (get('tracking')) body.push(`  letter-spacing: var(--type-${r}-tracking);`);
     if (get('caps')) body.push('  text-transform: uppercase;');
-    if (get('tabular')) body.push('  font-variant-numeric: var(--numeric-tabular);');
+    // Le raccourci `font` remet `font-variant-numeric` à normal : tout rôle l'écrit après `font`,
+    // sinon les chiffres d'un axe, d'une légende ou d'une matrice redeviennent proportionnels.
+    body.push('  font-variant-numeric: var(--numeric-tabular);');
     const d = get('weight')?.$description;
     return `${d ? `/* ${d} */\n` : ''}@utility type-${r} {\n${body.join('\n')}\n}`;
   });
@@ -418,7 +420,7 @@ ${L.join('\n')}
 }
 
 /* Rôles typographiques : type-<rôle> pose la police, la taille, l'interligne, la graisse,
-   l'interlettrage et, selon le rôle, les capitales ou les chiffres tabulaires. C'est la
+   l'interlettrage, les chiffres tabulaires et, selon le rôle, les capitales. C'est la
    seule façon d'écrire du texte dans un composant : aucune taille en dur n'est enregistrée. */
 
 ${util.join('\n\n')}
