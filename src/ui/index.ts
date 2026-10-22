@@ -1,5 +1,39 @@
-// Point d'entrée « ui » : composants d'interface génériques (étage 2).
-// Les 28 primitives arrivent au lot 2 ; l'utilitaire de classes sert déjà.
-export { cn } from '../lib/cn';
-export const etage = { support: 'ui', statut: 'actif' } as const;
-export type Etage = typeof etage;
+// Point d'entrée « ui » : composants d'interface (étage 2). Un fichier par composant, lu depuis les rôles et les jetons.
+export { cn } from "../lib/cn"
+export { MessagesProvider, messagesFr, useMessages, type Messages } from "./messages"
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion"
+export { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, AlertDialogPortal, AlertDialogTitle, AlertDialogTrigger } from "./alert-dialog"
+export { Avatar, AvatarFallback, AvatarGroup, AvatarImage, avatarVariants } from "./avatar"
+export { Badge, badgeVariants } from "./badge"
+export { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "./breadcrumb"
+export { Button, buttonVariants } from "./button"
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "./card"
+export { Checkbox } from "./checkbox"
+export { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut } from "./command"
+export { Dialog, DialogBody, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogOverlay, DialogPortal, DialogTitle, DialogTrigger } from "./dialog"
+export { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "./dropdown-menu"
+export { Field, FieldContent, FieldLabel, FieldDescription, FieldError, FieldGroup, fieldVariants } from "./field"
+export { Input, inputVariants } from "./input"
+export { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput, InputGroupText, InputGroupTextarea, inputGroupAddonVariants, inputGroupButtonVariants } from "./input-group"
+export { Label } from "./label"
+export { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuViewport, navigationMenuTriggerStyle } from "./navigation-menu"
+export { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "./pagination"
+export { Popover, PopoverAnchor, PopoverClose, PopoverContent, PopoverDescription, PopoverHeader, PopoverTitle, PopoverTrigger } from "./popover"
+export { RadioGroup, RadioGroupItem } from "./radio-group"
+export { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectScrollDownButton, SelectScrollUpButton, SelectSeparator, SelectTrigger, SelectValue } from "./select"
+export { Separator } from "./separator"
+export { Sheet, SheetBody, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetOverlay, SheetPortal, SheetTitle, SheetTrigger } from "./sheet"
+export { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupAction, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarInput, SidebarInset, SidebarMenu, SidebarMenuAction, SidebarMenuBadge, SidebarMenuButton, SidebarMenuItem, SidebarMenuSkeleton, SidebarMenuSub, SidebarMenuSubButton, SidebarMenuSubItem, SidebarProvider, SidebarRail, SidebarSeparator, SidebarTrigger, sidebarMenuButtonVariants, useSidebar } from "./sidebar"
+export { Skeleton, SkeletonGroup, skeletonVariants } from "./skeleton"
+export { Toaster, toast } from "./sonner"
+export { Switch, SwitchValue } from "./switch"
+export { Table, TableHeader, TableBody, TableFooter, TableHead, TableRow, TableCell, TableCaption } from "./table"
+export { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs"
+export { Textarea } from "./textarea"
+export { Toggle, toggleVariants } from "./toggle"
+export { ToggleGroup, ToggleGroupItem } from "./toggle-group"
+export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip"
+export * from "./charts/index"
+export const etage = { support: "ui", statut: "actif" } as const
+export type Etage = typeof etage
+export type { BadgeVariant } from "./badge"

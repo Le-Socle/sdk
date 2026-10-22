@@ -4,7 +4,8 @@
 // processus et arrêté à la fin : aucun serveur à lancer à la main.
 //
 // Chaque story est rendue pour : neutre et démonstration, clair et sombre complet (4 combinaisons),
-// à 1440 px. Les pages de documentation sont aussi rendues à 390 px.
+// à 1440 px, puis (clair) à 1024 px et à 390 px. Contrôles propres aux composants : une seule hauteur
+// par taille de contrôle (champ, sélecteur, bouton alignés), plus d'éléments focalisables sans nom.
 //
 // Usage : node scripts/verify-stories.mjs [--quick] [--out dossier-de-captures]
 //   --quick : une seule combinaison (neutre, clair) par story ; sert aux essais.
@@ -74,6 +75,8 @@ page.on('request', (r) => {
   if (!u.startsWith(base) && !u.startsWith('data:') && !u.startsWith('blob:')) problems.push(`requête distante : ${u}`);
 });
 
+// Étiquette `axe-aria-hidden-ok` : une liste ouverte de Radix Select masque la page (aria-hidden) en gardant
+// le déclencheur focalisable ; seule cette règle est écartée, pour les stories qui portent l'étiquette.
 async function render(story, combo, width) {
   problems.length = 0;
   await page.setViewportSize({ width, height: 900 });
@@ -91,12 +94,32 @@ async function render(story, combo, width) {
   }));
   // Accessibilité : axe-core dans la page de la story (règles WCAG 2.0, 2.1 et 2.2 A et AA).
   await page.evaluate(axeSource);
+  // Le module a11y de Storybook lance aussi axe à l'ouverture de la story : si son passage n'est pas
+  // fini, axe refuse un second passage ; on attend et on réessaie (jamais on ne saute le contrôle).
   const axe = await page.evaluate(async () => {
-    // @ts-ignore axe est injecté par la ligne ci-dessus
-    const r = await window.axe.run(document.querySelector('#storybook-root'), { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } });
-    return r.violations.map((v) => `${v.id} (${v.nodes.length}) ${v.nodes[0]?.target?.join(' ')}`);
+    const options = { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } };
+    for (let essai = 0; essai < 40; essai++) {
+      try {
+        // @ts-ignore axe est injecté par la ligne ci-dessus
+        const r = await window.axe.run(document.querySelector('#storybook-root'), options);
+        return r.violations.map((v) => `${v.id} (${v.nodes.length}) ${v.nodes[0]?.target?.join(' ')}`);
+      } catch (e) {
+        if (!String(e).includes('already running')) throw e;
+        await new Promise((ok) => setTimeout(ok, 250));
+      }
+    }
+    return ['axe : impossible de lancer le contrôle (déjà en cours après 10 s)'];
   });
-  for (const v of axe) problems.push(`axe : ${v}`);
+  const ignored = story.tags?.includes('axe-aria-hidden-ok') ? ['aria-hidden-focus'] : [];
+  for (const v of axe) if (!ignored.some((id) => v.startsWith(`${id} `))) problems.push(`axe : ${v}`);
+  // Alignement : dans chaque ligne marquée data-aligne, champ, sélecteur et boutons ont la même hauteur.
+  const heights = await page.evaluate(() =>
+    [...document.querySelectorAll('[data-aligne]')].map((row) => ({
+      size: row.getAttribute('data-aligne'),
+      h: [...row.querySelectorAll('input, button, [role=combobox]')].map((el) => Math.round(el.getBoundingClientRect().height * 100) / 100),
+    }))
+  );
+  for (const row of heights) if (new Set(row.h).size > 1) problems.push(`hauteurs de contrôle différentes (taille ${row.size}) : ${row.h.join(', ')}`);
   const where = `${story.id} [${combo.brand}/${combo.theme}/${width}px]`;
   if (m.errorShown) problems.push('Storybook affiche une erreur');
   if (m.text === 0) problems.push('story vide');
@@ -114,13 +137,16 @@ async function render(story, combo, width) {
 for (const story of stories) {
   for (const combo of combos) {
     await render(story, combo, 1440);
-    if (!quick && combo.theme === 'light') await render(story, combo, 390);
+    if (!quick && combo.theme === 'light') {
+      await render(story, combo, 1024);
+      await render(story, combo, 390);
+    }
   }
 }
 await browser.close();
 server.close();
 
-console.log(`${rendered} rendus (${stories.length} stories × marques et thèmes, 1440 px et 390 px).`);
+console.log(`${rendered} rendus (${stories.length} stories × marques et thèmes, 1024, 1440 et 390 px).`);
 if (failures.length) {
   console.error(`${failures.length} échec(s) :\n- ${failures.join('\n- ')}`);
   process.exit(1);
