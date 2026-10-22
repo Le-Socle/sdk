@@ -393,6 +393,48 @@
         ],
         "$description": "Fenêtre modale."
       }
+    },
+    "size": {
+      "sidebar": {
+        "$type": "dimension",
+        "$value": {
+          "value": 256,
+          "unit": "px"
+        },
+        "$description": "Largeur de la barre latérale ouverte."
+      },
+      "sidebar-icon": {
+        "$type": "dimension",
+        "$value": {
+          "value": 56,
+          "unit": "px"
+        },
+        "$description": "Largeur de la barre latérale repliée (icônes seules)."
+      },
+      "slide-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1920,
+          "unit": "px"
+        },
+        "$description": "Largeur d'une slide."
+      },
+      "slide-height": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1080,
+          "unit": "px"
+        },
+        "$description": "Hauteur d'une slide."
+      },
+      "visual": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1080,
+          "unit": "px"
+        },
+        "$description": "Côté d'un visuel carré."
+      }
     }
   }
 }

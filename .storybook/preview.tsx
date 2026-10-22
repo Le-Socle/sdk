@@ -1,6 +1,7 @@
 import type { Decorator, Preview } from '@storybook/react-vite';
 import '../generated/css/fonts.css';
 import '../generated/css/tokens.css';
+import './tailwind.css';
 import '../stories/lib/docs.css';
 import { applyContext, brandItems } from '../stories/lib/brands';
 

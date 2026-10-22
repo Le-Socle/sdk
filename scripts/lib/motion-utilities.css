@@ -1,0 +1,160 @@
+/* Mouvement des composants : images clés et utilitaires, tous écrits avec les jetons de durée
+   (--duration-*) et de courbe (--ease-*). Radix garde un contenu monté tant qu'une animation de
+   sortie tourne : il lui faut des images clés, pas des transitions. Mouvement réduit : les
+   jetons ramènent les durées à presque rien, et les classes qui portent une échelle passent à un
+   fondu seul. */
+
+@keyframes accordion-down {
+  from { height: 0; opacity: 0; }
+  to   { height: var(--radix-accordion-content-height); opacity: 1; }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); opacity: 1; }
+  to   { height: 0; opacity: 0; }
+}
+@utility animate-accordion-down {
+  animation: accordion-down var(--duration-normal) var(--ease-out);
+}
+@utility animate-accordion-up {
+  animation: accordion-up var(--duration-normal) var(--ease-out);
+}
+
+/* Battement d'un squelette de chargement : l'opacité seule. */
+@keyframes skeleton-pulse {
+  from { opacity: 1; }
+  to   { opacity: 0.5; }
+}
+@utility animate-skeleton {
+  animation: skeleton-pulse var(--duration-slower) var(--ease-in-out) infinite alternate;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* Infobulle : fondu et échelle depuis le point d'ancrage calculé par Radix. */
+@keyframes tooltip-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes tooltip-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@utility animate-tooltip-in {
+  transform-origin: var(--radix-tooltip-content-transform-origin);
+  animation: tooltip-in var(--duration-fast) var(--ease-out);
+  @media (prefers-reduced-motion: reduce) {
+    animation: tooltip-fade var(--duration-fast) var(--ease-out);
+  }
+}
+
+/* Anneau de focus rentré dans l'élément : pour un élément qui touche les bords d'un conteneur qui
+   coupe le débordement (option de liste). */
+@utility focus-ring-inset {
+  &:focus-visible {
+    outline: var(--focus-ring-width) solid var(--ring);
+    outline-offset: calc(var(--focus-ring-width) * -1);
+  }
+}
+
+/* Anneau de focus d'un champ composé : posé sur le cadre quand le champ qu'il contient a le focus
+   clavier. */
+@utility focus-ring-within {
+  &:has([data-slot="input-group-control"]:focus-visible) {
+    outline: var(--focus-ring-width) solid var(--ring);
+    outline-offset: var(--focus-ring-offset);
+  }
+}
+
+/* Voile, dialogue, volet, fenêtre flottante. */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes dialog-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes dialog-out {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.96); }
+}
+@keyframes sheet-in-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes sheet-in-left {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes sheet-out-right {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+@keyframes sheet-out-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+@keyframes popper-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@utility animate-overlay-in {
+  animation: fade-in var(--duration-fast) var(--ease-out);
+}
+@utility animate-overlay-out {
+  animation: fade-out var(--duration-micro) var(--ease-out);
+}
+@utility animate-dialog-in {
+  animation: dialog-in var(--duration-fast) var(--ease-out);
+  @media (prefers-reduced-motion: reduce) {
+    animation: fade-in var(--duration-fast) var(--ease-out);
+  }
+}
+@utility animate-dialog-out {
+  animation: dialog-out var(--duration-micro) var(--ease-out);
+  @media (prefers-reduced-motion: reduce) {
+    animation: fade-out var(--duration-micro) var(--ease-out);
+  }
+}
+@utility animate-sheet-in-right {
+  animation: sheet-in-right var(--duration-normal) var(--ease-out), fade-in var(--duration-fast) var(--ease-out);
+}
+@utility animate-sheet-in-left {
+  animation: sheet-in-left var(--duration-normal) var(--ease-out), fade-in var(--duration-fast) var(--ease-out);
+}
+@utility animate-sheet-out-right {
+  animation: sheet-out-right var(--duration-fast) var(--ease-out);
+  @media (prefers-reduced-motion: reduce) {
+    animation: fade-out var(--duration-micro) var(--ease-out);
+  }
+}
+@utility animate-sheet-out-left {
+  animation: sheet-out-left var(--duration-fast) var(--ease-out);
+  @media (prefers-reduced-motion: reduce) {
+    animation: fade-out var(--duration-micro) var(--ease-out);
+  }
+}
+@utility animate-popper-in {
+  transform-origin: var(--radix-popper-transform-origin);
+  animation: popper-in var(--duration-fast) var(--ease-out);
+  @media (prefers-reduced-motion: reduce) {
+    animation: fade-in var(--duration-fast) var(--ease-out);
+  }
+}
+
+/* Indicateur d'attente : un tour par --duration-slower, à vitesse constante. */
+@keyframes spinner-turn {
+  to { transform: rotate(1turn); }
+}
+@utility animate-spinner {
+  animation: spinner-turn var(--duration-slower) linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}

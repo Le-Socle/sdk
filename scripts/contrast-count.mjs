@@ -72,6 +72,14 @@ function pairsFor(ctx, dataCount) {
       ui(RC(`data.${i}.mark`), RC('bg.surface'), `palier ${i} : repère graphique`);
     }
   }
+  // Surfaces sombres : les séries et les repères de l'échelle de données se posent sur la carte.
+  if (ctx.surface !== 'light') {
+    for (let i = 1; i <= 6; i++) ui(RC(`series.${i}`), B('card'), `série ${i} d\u2019un graphique sur une carte`);
+    for (let i = 1; i <= dataCount; i++) {
+      text(RC(`data.${i}.text`), RC(`data.${i}.bg`), `palier ${i} : texte sur son fond`);
+      ui(RC(`data.${i}.mark`), B('card'), `palier ${i} : repère graphique sur une carte`);
+    }
+  }
   return P;
 }
 

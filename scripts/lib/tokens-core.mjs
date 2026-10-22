@@ -347,6 +347,12 @@ export function emitTheme({ resolver }) {
   const shadcn = new Set(base.map((x) => `--color-${cssName(x).slice(2)}`));
   for (const n of roleNames) if (!shadcn.has(n)) L.push(decl(n, `var(${n})`));
   L.push('');
+  L.push('  /* Jetons de composant (couleurs) : --color-<composant>-<partie> lit --<composant>-<partie> ; bg-badge-info-bg, bg-dialog-overlay. */');
+  for (const x of all.filter((y) => y.id.startsWith('component.') && !y.id.startsWith('component.base.') && y.$type === 'color')) {
+    const n = cssName(x).slice(2);
+    L.push(decl(`--color-${n}`, `var(--${n})`));
+  }
+  L.push('');
   L.push('  /* Rayons, ombres, courbes. */');
   for (const x of all.filter((y) => y.id.startsWith('role.radius.'))) L.push(decl(cssName(x), `var(${cssName(x)})`));
   for (const x of all.filter((y) => y.id.startsWith('role.shadow.'))) L.push(decl(cssName(x), `var(${cssName(x)})`));
@@ -367,6 +373,9 @@ export function emitTheme({ resolver }) {
   L.push('');
   L.push('  /* Espacements : la base de 4 px. p-4, gap-6, h-11 en découlent. */');
   L.push(decl('--spacing', 'var(--space-1)'));
+  L.push('');
+  L.push('  /* Largeurs de composant : w-sidebar, w-sidebar-icon. */');
+  for (const x of all.filter((y) => y.id.startsWith('role.size.'))) L.push(decl(`--width-${cssName(x).slice(2 + 'size-'.length)}`, `var(${cssName(x)})`));
   L.push('');
   L.push('  /* Largeur de page : max-w-page. */');
   L.push(decl('--container-page', 'var(--container-page)'));
@@ -437,7 +446,8 @@ ${durations.join('\n\n')}
     }
   }
 }
-`;
+
+${fs.readFileSync(new URL('./motion-utilities.css', import.meta.url), 'utf8')}`;
 }
 
 // ---------------------------------------------------------------- valeurs brutes (TypeScript)

@@ -1,0 +1,12 @@
+/* Entrée Tailwind 4 de Storybook : les couches, le préflight et les règles de base, les
+   utilitaires, le thème généré depuis les jetons, puis les sources dont les classes sont à produire.
+   Les variables (jetons) viennent de generated/css/tokens.css, importé par preview.tsx. */
+@layer theme, base, components, utilities;
+
+@import "../src/styles/base.css";
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@import "../generated/css/theme.css";
+
+@source "../src/ui";
+
+@source "../stories";

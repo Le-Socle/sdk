@@ -351,6 +351,16 @@
             "cssName": "radius"
           }
         }
+      },
+      "destructive-text": {
+        "$type": "color",
+        "$value": "{role.color.status.error.text}",
+        "$description": "Texte de danger ou d'erreur (le repère destructive ne passe pas 4,5:1 en texte).",
+        "$extensions": {
+          "org.le-socle": {
+            "cssName": "destructive-text"
+          }
+        }
       }
     },
     "button": {
@@ -398,6 +408,11 @@
         "$type": "color",
         "$value": "{component.base.ring}",
         "$description": "Anneau de focus du bouton."
+      },
+      "danger-quiet-hover-bg": {
+        "$type": "color",
+        "$value": "{role.color.status.error.bg}",
+        "$description": "Survol du bouton danger discret."
       }
     },
     "input": {
@@ -459,6 +474,100 @@
         "$type": "color",
         "$value": "{component.base.secondary-foreground}",
         "$description": "Texte d'un badge neutre."
+      },
+      "info-bg": {
+        "$type": "color",
+        "$value": "{role.color.status.info.bg}",
+        "$description": "Fond d'un badge d'information."
+      },
+      "info-fg": {
+        "$type": "color",
+        "$value": "{role.color.status.info.text}",
+        "$description": "Texte d'un badge d'information."
+      },
+      "info-border": {
+        "$type": "color",
+        "$value": "{role.color.status.info.border}",
+        "$description": "Bordure d'un badge d'information."
+      },
+      "success-bg": {
+        "$type": "color",
+        "$value": "{role.color.status.success.bg}",
+        "$description": "Fond d'un badge de réussite."
+      },
+      "success-fg": {
+        "$type": "color",
+        "$value": "{role.color.status.success.text}",
+        "$description": "Texte d'un badge de réussite."
+      },
+      "success-border": {
+        "$type": "color",
+        "$value": "{role.color.status.success.border}",
+        "$description": "Bordure d'un badge de réussite."
+      },
+      "warning-bg": {
+        "$type": "color",
+        "$value": "{role.color.status.warning.bg}",
+        "$description": "Fond d'un badge d'avertissement."
+      },
+      "warning-fg": {
+        "$type": "color",
+        "$value": "{role.color.status.warning.text}",
+        "$description": "Texte d'un badge d'avertissement."
+      },
+      "warning-border": {
+        "$type": "color",
+        "$value": "{role.color.status.warning.border}",
+        "$description": "Bordure d'un badge d'avertissement."
+      },
+      "danger-bg": {
+        "$type": "color",
+        "$value": "{role.color.status.error.bg}",
+        "$description": "Fond d'un badge d'erreur."
+      },
+      "danger-fg": {
+        "$type": "color",
+        "$value": "{role.color.status.error.text}",
+        "$description": "Texte d'un badge d'erreur."
+      },
+      "danger-border": {
+        "$type": "color",
+        "$value": "{role.color.status.error.border}",
+        "$description": "Bordure d'un badge d'erreur."
+      }
+    },
+    "dialog": {
+      "overlay": {
+        "$type": "color",
+        "$value": "{role.color.overlay}",
+        "$description": "Voile derrière une fenêtre ou un volet."
+      }
+    },
+    "chart": {
+      "grid": {
+        "$type": "color",
+        "$value": "{component.base.border}",
+        "$description": "Quadrillage et filets d'un graphique."
+      },
+      "axis": {
+        "$type": "color",
+        "$value": "{component.base.muted-foreground}",
+        "$description": "Texte des axes et des légendes d'un graphique."
+      },
+      "label": {
+        "$type": "color",
+        "$value": "{component.base.heading}",
+        "$description": "Chiffres et libellés posés sur un graphique."
+      },
+      "track": {
+        "$type": "color",
+        "$value": "{component.base.muted}",
+        "$description": "Piste derrière une barre, un arc ou une jauge."
+      },
+      "surface": {
+        "$type": "color",
+        "$value": "{component.base.card}",
+        "$description": "Fond d'un graphique, et liseré qui sépare deux repères."
       }
     }
   }

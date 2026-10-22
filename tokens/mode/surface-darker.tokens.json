@@ -85,6 +85,38 @@
       "link": {
         "$type": "color",
         "$value": "{role.color.text.inverse}"
+      },
+      "destructive-text": {
+        "$type": "color",
+        "$value": "{role.color.status.error.bg}"
+      }
+    },
+    "button": {
+      "danger-quiet-hover-bg": {
+        "$type": "color",
+        "$value": "{role.color.bg.inverse-raised}"
+      }
+    }
+  },
+  "role": {
+    "color": {
+      "series": {
+        "1": {
+          "$type": "color",
+          "$value": "{value.palette.primary.400}"
+        },
+        "2": {
+          "$type": "color",
+          "$value": "{value.palette.accent.400}"
+        },
+        "3": {
+          "$type": "color",
+          "$value": "{value.palette.secondary.400}"
+        },
+        "4": {
+          "$type": "color",
+          "$value": "{value.palette.neutral.400}"
+        }
       }
     }
   }

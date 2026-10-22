@@ -104,9 +104,14 @@
       "optional": true
     }
   },
-  "optionalDependencies": {},
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "lucide-react": "^1.61.0",
+    "radix-ui": "^1.8.1",
+    "recharts": "^3.10.1",
+    "sonner": "^2.0.8",
     "tailwind-merge": "^3.0.0"
   },
   "devDependencies": {
@@ -132,6 +137,7 @@
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "storybook": "^10.6.0",
+    "storybook-addon-pseudo-states": "^10.6.3",
     "style-dictionary": "^5.7.0",
     "tailwindcss": "^4.3.3",
     "tsc-alias": "^1.9.7",
